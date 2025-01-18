@@ -19,7 +19,7 @@
 		{
 
 			"level" "1"
-			"health_max" "8"
+			"health_max" "30"
 			"armor_max" "5"
 			"baseDamage"  "4"
 			"armor_regen_per_turn" "2"
