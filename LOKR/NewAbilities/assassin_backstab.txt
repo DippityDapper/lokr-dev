@@ -1,0 +1,98 @@
+"assassin_backstab"
+{
+    "AbilityBehavior"           "UNIT_TARGET"
+    "AbilityTeamFilter"         "TEAM_ENEMY"
+    
+    "AbilityCastRange"          "20"
+    "AbilityCooldown"           "5"
+    "AbilityAPCost"             "2"
+    "AnimationID"               "Attack"
+    "CastFXId"                  "ShadowStrikeCastFXMega"
+    "Icon"                      "ShadowStrike"
+
+   
+    "AbilitySpecial" 
+    {
+        "01"
+        {
+            "var_type"              "FIELD_EXPRESSION"
+            "damage"                "stat(%CASTER, #attackDamage)"
+        }
+
+        "02"
+        {
+            "var_type"              "FIELD_FLOAT"
+            "cooldownOffset"        "1"
+        }
+    }
+
+    
+
+    "OnAbilityAction"
+    {
+        "SetToContext"
+        {
+            "Context" "currentContext()"
+            "Key" "#targetPosition"
+            "Value" "hexPosition(hexNeighbour(unitHex(%TARGET), unitHex(%SOURCE), 3))"
+            "Type" "FIELD_OBJECT"
+        }
+
+        "AttachEffect"
+        {
+            "EffectName"    "ShadowStrikeTeleportFXMega"
+            "Target"        "%SOURCE"
+        }
+
+        "MoveUnit"
+        {
+            "Target"        "%SOURCE"
+            "Position"      "%targetPosition"
+        }
+
+        "ApplyModifier"
+        {
+            "ModifierName"      "assassin_backstab_detect_modifier"
+            "Target"            "%SOURCE"
+            "Duration"          "0"
+        }
+
+        "QueueAttackUnit"
+        {
+            "Target"                "%SOURCE"
+            "AttackTarget"          "%TARGET"
+        }
+
+        "RemoveModifier"
+        {
+            "ModifierName"      "assassin_backstab_detect_modifier"
+            "Target"            "%SOURCE"
+        }
+    }        
+            
+    "Modifiers"
+    {
+        "assassin_backstab_detect_modifier"
+        {
+            "OnUnitDiedGlobal"
+            {
+                "Conditional" 
+                {
+                    "Condition" "equal(%INSTIGATOR, %TARGET) && matchesGroup(unitGroup(%DEAD), @UnitGroup(BadSide)) && not(isOnState(%DEAD, #NO_SKULL)) && not(isOnState(%DEAD, #IS_CINEMATIC))"
+                    "Actions"
+                    {
+                        "MarkHitLegendary"
+                        {
+                        }
+
+                        "OffsetCooldown"
+                        {
+                            "Target" "%SOURCE"
+                            "Offset" "0-%cooldownOffset"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

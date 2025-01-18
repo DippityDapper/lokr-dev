@@ -1,0 +1,39 @@
+"UNIT_MINION_ASSASSIN_NAME_0001" = "Assassin"
+"UNIT_MINION_ASSASSIN_LORE" = "A deadly and agile individual with no room for mercy. They don't need to hide in shadows; you won't even see them coming."
+
+
+"SKILL_assassin_aimed_slash_NAME" = "Aimed Slash"
+"SKILL_assassin_aimed_slash_DESCRIPTION" = "Strikes an enemy with precision, dealing damage."
+"SKILL_assassin_aimed_slash_DESCRIPTION_EPIC" = "<style="epic">EPIC:</style> Deals extra damage if backstabbing."
+"SKILL_assassin_aimed_slash_DESCRIPTION_DATA" = "Damage: <style="rangeofdamage">{MinDamage} - {MaxDamage} {icon#damagePhysical}</style>\nEPIC Damage: <style="damage">{epicDamage} {icon#damagePhysical}</style>\nRange: <style="highlight">MELEE</style>"
+
+"SKILL_assassin_stealth_NAME" = "Invisibility"
+"SKILL_assassin_stealth_DESCRIPTION" = "The Assassin becomes invisible for 2 turns, removing her from enemy prioritization."
+"SKILL_assassin_stealth_DESCRIPTION_EPIC" = "<style="epic">EPIC:</style> Entering stealth while Keen Focus is active will increase the buff damage from 2 to 3 for the duration of the stealth."
+"SKILL_assassin_stealth_DESCRIPTION_DATA" = "Duration: <style="highlight">{duration}</style> {icon#turns}\nRange: <style="highlight">SELF</style>"
+
+
+"SKILL_assassin_counterattack_NAME" = "Counterattack"
+"SKILL_assassin_counterattack_DESCRIPTION" = "Increases melee dodge chance to 100% against the next melee attack and responds with a counterattack."
+"SKILL_assassin_counterattack_DESCRIPTION_DATA" = "Duration: <style="highlight">{duration}</style> {icon#turns}\nRange: <style="highlight">SELF</style>"
+
+"SKILL_assassin_dagger_NAME" = "Pocket Dagger"
+"SKILL_assassin_dagger_DESCRIPTION" = "Quickly flings a dagger to hit an enemy, dealing damage."
+"SKILL_assassin_dagger_DESCRIPTION_DATA" = "Damage: <style="damage">{RangedDmg} {icon#damagePhysical}</style>\nRange: <style="highlight">{AbilityCastRange}</style>"
+"SKILL_assassin_dagger_DESCRIPTION_EXTRA" = "<style="extra">The Assassin can use another skill after this one.</style>"
+
+"SKILL_assassin_backstab_NAME" = "Backstab"
+"SKILL_assassin_backstab_DESCRIPTION" = "The Assassin teleports behind a targeted enemy and performs an <style="highlight">Aimed Slash</style> on them."
+"SKILL_assassin_backstab_DESCRIPTION_EPIC" = "<style="epic">EPIC:</style> If the target is killed, the Assassin can teleport again."
+"SKILL_assassin_backstab_DESCRIPTION_DATA" = "\nRange: <style="highlight">GLOBAL</style>"
+
+
+
+
+
+
+"COMBAT_MODIFIER_assassin_counterattack_modifier_TITLE" = "Counter Stance"
+"COMBAT_MODIFIER_assassin_counterattack_modifier_DESCRIPTION" = "The assassin will dodge the next melee attack then perform a counterattack."
+
+"COMBAT_MODIFIER_assassin_stealth_modifier_TITLE" = "Invisible"
+"COMBAT_MODIFIER_assassin_stealth_modifier_DESCRIPTION" = "This unit is invisible to enemies and cannot be targeted."
