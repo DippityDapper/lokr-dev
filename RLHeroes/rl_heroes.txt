@@ -2696,16 +2696,11 @@
 
  		"soundConfig"
 		{
-			"assetId" "DynamicSoundGroupSylvanElfSounds"
 			"sounds"
 			{
-				"receiveDamage" "krl_va_combatSylvanElf_hit"
+				"receiveDamage" "krl_sfx_combatGeneric_humanFemaleHit"
 				"receiveArmorDamage" "krl_sfx_combatGeneric_armorHit"
-				"death" "krl_va_combatSylvanElf_death"
-				"useSkill" "krl_va_combatSylvanElf_action"
-				"startTurn" "krl_va_combatSylvanElf_turnStart"
-				"promote" "krl_va_combatSylvanElf_promote"
-				"selectHero" "krl_va_combatSylvanElf_select"
+				"death" "krl_sfx_combatGeneric_humanFemaleDeath"
 			}
 		}
 	}
