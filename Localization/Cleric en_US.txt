@@ -4,8 +4,8 @@
 
 "SKILL_cleric_whack_NAME" = "Whack"
 "SKILL_cleric_whack_DESCRIPTION" = "Strikes the target, dealing physical damage."
+"SKILL_cleric_whack_DESCRIPTION_EPIC" = "<style="epic">EPIC:</style> Gain +2 armor for slaying an enemy with this skill."
 "SKILL_cleric_whack_DESCRIPTION_DATA" = "Damage: <style="rangeofdamage">{MinDamage} - {MaxDamage} {icon#damagePhysical}</style>\nRange: <style="highlight">MELEE</style>"
-"SKILL_cleric_whack_DESCRIPTION_EPIC" = "Gain +2 armor for slaying an enemy with this skill."
 
 "SKILL_cleric_shield_up_NAME" = "Shield Up"
 "SKILL_cleric_shield_up_DESCRIPTION" = "Staying in place for the entire turn will grant the Cleric +2 armor."

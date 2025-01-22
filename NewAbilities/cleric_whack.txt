@@ -62,12 +62,6 @@
 
                     "Actions" 
                     {
-						"RemoveModifier"
-						{
-							"ModifierName"      "modifier_whack_epic"
-							"Target"            "%SOURCE"
-						}
-                
 						"ApplyModifier"
 						{
 							"ModifierName"      "modifier_whack_epic"

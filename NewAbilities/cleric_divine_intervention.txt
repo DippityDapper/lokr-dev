@@ -21,7 +21,7 @@
         "01"
         {
             "var_type"      			"FIELD_FLOAT"
-            "damageReduction"           "1"
+            "damageReduction"           "-1"
         }
 
         "02"
@@ -82,14 +82,14 @@
 
                         "RemoveModifier"
                         {
-                            "ModifierTag"    "dot"
-                            "Target"         "%newTarget"
+                            "ModifierTag"   "dot"
+                            "Target"        "%newTarget"
                         }
 
                         "AttachEffect"
                         {
-                            "EffectName" "HealingFXMega"
-                            "Target" "%newTarget"
+                            "EffectName"    "SorceressCorrodingHexGiveArmorFXMega"
+                            "Target"        "%newTarget"
                         }
                     }
                 }

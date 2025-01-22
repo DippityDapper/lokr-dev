@@ -40,6 +40,9 @@
         "cleric_shield_up_modifier"
         {
             "EffectName"                "KnightHoldTheLineStatusFXMega"
+            "Icon"          "Fortify"
+            "IconPriority"  "50"
+
 
             "PropertiesAdd"
             {
