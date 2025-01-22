@@ -4,11 +4,11 @@
     "AbilityTeamFilter"     "TEAM_ENEMY"
     "AbilityCastRange"      "stat(%CASTER, #rangedAttackRange)"
     "AbilityCastMinRange"   "stat(%CASTER, #rangedAttackMinRange)"
-    "AbilityCooldown"       "2"
+    "AbilityCooldown"       "1"
     "AbilityAPCost"         "1"
     "AnimationID"           "SpecialAttack"
     "CastFXId"              "ArrowOfSorrowCastFXMega"
-    "Icon"                  "OnyxArrows"
+    "Icon"                  "BanditRangedAttack"
 
    
     "AbilitySpecial" 
@@ -16,7 +16,7 @@
         "01"
         {
             "var_type" "FIELD_EXPRESSION"
-            "RangedDmg"  "floor(stat(%CASTER, #attackDamage)/3)"
+            "RangedDmg"  "floor(stat(%CASTER, #attackDamage)/2)"
         }
     }
 

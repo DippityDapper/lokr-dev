@@ -3,38 +3,38 @@
 
 
 "SKILL_cleric_whack_NAME" = "Whack"
-"SKILL_cleric_whack_DESCRIPTION" = "Strikes the target, dealing bonus damage based on his <style="buff">Faith</style>."
-"SKILL_cleric_whack_DESCRIPTION_DATA" = "Damage: <style="rangeofdamage">{MinDamage} - {MaxDamage} {icon#damagePhysical}</style>\nFaith Bonus: {holyBonus}\nRange: <style="highlight">MELEE</style>"
+"SKILL_cleric_whack_DESCRIPTION" = "Strikes the target, dealing physical damage."
+"SKILL_cleric_whack_DESCRIPTION_EPIC" = "<style="epic">EPIC:</style> Gain +2 armor for slaying an enemy with this skill."
+"SKILL_cleric_whack_DESCRIPTION_DATA" = "Damage: <style="rangeofdamage">{MinDamage} - {MaxDamage} {icon#damagePhysical}</style>\nRange: <style="highlight">MELEE</style>"
 
-"SKILL_cleric_prayer_NAME" = "Prayer"
-"SKILL_cleric_prayer_DESCRIPTION" = "An incantation that grants <style="buff">Faith</style> to the Cleric, which can enhance his other abilities."
-"SKILL_cleric_prayer_DESCRIPTION_DATA" = "Added Points: <style="buff">{pointAmount}</style>\nRange: <style="highlight">SELF</style>\n<style="highlight">Current Faith:</style> <style="highlight">{HolyPoints}</style>"
+"SKILL_cleric_shield_up_NAME" = "Shield Up"
+"SKILL_cleric_shield_up_DESCRIPTION" = "Staying in place for the entire turn will grant the Cleric +2 armor."
+"SKILL_cleric_shield_up_DESCRIPTION_DATA" = "Bonus Armor: <style="highlight">{extraArmor}</style>"
+
+"SKILL_cleric_communion_NAME" = "Communion"
+"SKILL_cleric_communion_DESCRIPTION" = "With a prayer, the Cleric gives a selected ally and himself <style="highlight">+1</style> increased attack for 2 turns."
+"SKILL_cleric_communion_DESCRIPTION_DATA" = "Attack Bonus: <style="buff">+{extraDamage} {icon#damagePhysical}</style>\nDuration: <style="highlight">{duration}</style> {icon#turns}\nRange: <style="highlight">{AbilityCastRange}</style>"
+"SKILL_cleric_communion_DESCRIPTION_EXTRA" = "<style="extra">The ability automatically buffs the Cleric.</style>"
+
+"SKILL_cleric_miracle_NAME" = "Miracle"
+"SKILL_cleric_miracle_DESCRIPTION" = "Summons a curse on enemies that nullifies their damage to 0 for a time."
+"SKILL_cleric_miracle_DESCRIPTION_DATA" = "Duration: <style="highlight">{duration}</style> {icon#turns}\nRange: <style="highlight">{AbilityCastRange}</style>"
 
 "SKILL_cleric_providence_NAME" = "Providence"
-"SKILL_cleric_providence_DESCRIPTION" = "Grants the targeted unit and himself damage reduction from all sources <style="highlight">and</style> increased attack."
-"SKILL_cleric_providence_DESCRIPTION_DATA" = "Attack Bonus: <style="buff">+{extraDamage} {icon#damagePhysical}</style>\nDamage Reduction: <style="buff">{damageReduction}</style>\nDuration: <style="highlight">{duration}</style> {icon#turns}\nRange: <style="highlight">{AbilityCastRange}</style>"
-"SKILL_cleric_providence_DESCRIPTION_EXTRA" = "<style="extra">The duration scales based on Faith.</style>"
+"SKILL_cleric_providence_DESCRIPTION" = "The Cleric invigorates surrounding allies with a holy blessing, reducing their abilities's cooldowns by 1 turn."
+"SKILL_cleric_providence_DESCRIPTION_DATA" = "Cooldown Reduction: <style="highlight">{cooldownOffset}</style> {icon#turns}\nRange: <style="highlight">{aoeRadius}</style>"
 
-"SKILL_cleric_solemn_vow_NAME" = "Solemn Vow"
-"SKILL_cleric_solemn_vow_DESCRIPTION" = "Calls down a curse on an enemy, preventing them from dealing damage to your allies."
-"SKILL_cleric_solemn_vow_DESCRIPTION_DATA" = "Duration: <style="highlight">{duration}</style> {icon#turns}\nRange: <style="highlight">{AbilityCastRange}</style>"
-"SKILL_cleric_solemn_vow_DESCRIPTION_EXTRA" = "<style="extra">The duration scales based on Faith.</style>"
+"SKILL_cleric_divine_intervention_NAME" = "Divine Intervention"
+"SKILL_cleric_divine_intervention_DESCRIPTION" = "Invokes the power of God to summon a beam of cleansing light which will grant damage reductionand remove all <style="debuff">weakened</style> debuffs."
+"SKILL_cleric_divine_intervention_DESCRIPTION_DATA" = "Duration: <style="highlight">{duration}</style> {icon#turns}\nDamage Reduction: <style="highlight">{damageReduction}\nRange: <style="highlight">{AbilityCastRange}</style>"
 
-"SKILL_cleric_healing_light_NAME" = "Divine Intervention"
-"SKILL_cleric_healing_light_DESCRIPTION" = "Channels his <style="buff">Faith</style> to summon a beam of healing light, which will restore HP and remove all <style="debuff">weakened</style> debuffs."
-"SKILL_cleric_healing_light_DESCRIPTION_DATA" = "Healing: <style="buff">{heal} {icon#statHP} </style>\nRange: <style="highlight">GLOBAL</style>"
-"SKILL_cleric_healing_light_DESCRIPTION_EXTRA" = "<style="extra">Cannot be executed until the Cleric has {faithMin} Faith.</style>"
+"SKILL_cleric_smite_NAME" = "Smite"
+"SKILL_cleric_smite_DESCRIPTION" = "Calls upon the wrath of the heavens to strike enemies with 1 bolt of lightning for each point of the Cleric's attack damage."
+"SKILL_cleric_smite_DESCRIPTION_DATA" = "Damage: <style="highlight">{damage} {icon#damageTrue}</style>\nNumber of Bolts: <style="highlight">{numberOfHits}</style>\nAOE size: <style="highlight">{maxDistance}</style>"
+"SKILL_cleric_smite_DESCRIPTION_EXTRA" = "<style="extra">This skill will not repeat targets until every possible target has been struck at least once.</style>"
 
-"SKILL_cleric_holy_wrath_NAME" = "Holy Wrath"
-"SKILL_cleric_holy_wrath_DESCRIPTION" = "Once he has gathered enough <style="buff">Faith</style>, the Cleric may smite an enemy, dealing a range of true damage to an enemy."
-"SKILL_cleric_holy_wrath_DESCRIPTION_DATA" = "Damage: <style="rangeofdamage">{minDamage} - {maxDamage} {icon#damageTrue}</style>\nRange: <style="highlight">{AbilityCastRange}</style>"
-"SKILL_cleric_holy_wrath_DESCRIPTION_EXTRA" = "<style="extra">Cannot be executed until the Cleric has {faithMin} Faith.</style>"
+"COMBAT_MODIFIER_modifier_cleric_vow_of_peace_TITLE" = "Nullified"
+"COMBAT_MODIFIER_modifier_cleric_vow_of_peace_DESCRIPTION" = "This unit's damage stat is reduced to 0. Flat damage scaling on abilities is unaffected."
 
-"COMBAT_MODIFIER_cleric_holy_points_modifier_TITLE" = "Devout"
-"COMBAT_MODIFIER_cleric_holy_points_modifier_DESCRIPTION" = "This unit is enhanced by their Faith."
-
-"COMBAT_MODIFIER_modifier_cleric_vow_of_peace_TITLE" = "Oath of Peace"
-"COMBAT_MODIFIER_modifier_cleric_vow_of_peace_DESCRIPTION" = "This unit's damage is greatly decreased."
-
-"COMBAT_MODIFIER_modifier_blessing_of_providence_TITLE" = "Grateful"
-"COMBAT_MODIFIER_modifier_blessing_of_providence_DESCRIPTION" = "This unit is affected by <style="highlight">Providence</style>."
+"COMBAT_MODIFIER_modifier_communion_TITLE" = "Communion"
+"COMBAT_MODIFIER_modifier_communion_DESCRIPTION" = "This unit is blessed by <style="highlight">Communion</style>, increasing their damage by 1."

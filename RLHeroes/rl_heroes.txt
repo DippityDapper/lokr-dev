@@ -2532,11 +2532,11 @@
 			"level" 				"1"
 							
 			"health_max" 			"4"
-			"armor_max" 			"6"
-			"armor_regen_per_turn" 	"1"
-			"baseDamage"  			"3"
+			"armor_max" 			"4"
+			"armor_regen_per_turn" 	"0"
+			"baseDamage"  			"4"
 			"holyPoints"			"0"
-			"armor_gain_passTurn" 	"2"
+			"armor_gain_passTurn" 	"0"
 
 			"rangedAttackRange" 	"3" 
 			
@@ -2545,27 +2545,27 @@
 
 		"skills"
 		{
-			"11" 	"oportunity_attack"
-			"100" 	"mighty_endturn_trait"
+			"11" 	"cleric_shield_up"
+			"100" 	"magic_endturn_trait"
  		}
 
  		"skillProgression"
  		{
 			"1" 
  			{
- 				"1" "cleric_prayer"
+ 				"1" "cleric_communion"
  			}
 
  			"2" 
  			{
- 				"1" "cleric_providence"
- 				"2" "cleric_solemn_vow"
+ 				"1" "cleric_miracle"
+ 				"2" "cleric_providence"
  			}
 
  			"3"
  			{
- 				"1" "cleric_healing_light"
- 				"2" "cleric_holy_wrath"
+ 				"1" "cleric_divine_intervention"
+ 				"2" "cleric_smite"
  			}
  		}
 
@@ -2594,11 +2594,10 @@
 			"level" 				"2"
 							
 			"health_max" 			"6"
-			"armor_max" 			"8"
-			"armor_regen_per_turn" 	"1"
-			"baseDamage"  			"4"
+			"armor_max" 			"4"
+			"armor_regen_per_turn" 	"0"
+			"baseDamage"  			"5"
 			"holyPoints"			"0"
-			"armor_gain_passTurn" 	"2"
 			
 			"rangedAttackRange" 	"3" 
 
@@ -2617,9 +2616,9 @@
 			"level" 				"3"
 							
 			"health_max" 			"8"
-			"armor_max" 			"8"
-			"armor_regen_per_turn" 	"2"
-			"baseDamage"  			"5"
+			"armor_max" 			"4"
+			"armor_regen_per_turn" 	"0"
+			"baseDamage"  			"6"
 			"holyPoints"			"0"
 			"armor_gain_passTurn" 	"2"
 
@@ -2657,7 +2656,7 @@
 
 			"rangedAttackRange" "3"
 			"rangedAttackMinRange" "1"
-			"evasion" "0.25"
+			"evasion" "0.4"
 			
 			"visualMoveSpeed" "4" 
 			"visualRunSpeed" "4"
@@ -2688,11 +2687,11 @@
  			"3"
  			{
  				"1" "assassin_backstab"
- 				"2" "shield_of_retribution"
+ 				"2" "assassin_quickstep"
  			}
  		}
 
- 		"defaultSkill" "assassin_aimed_slash"
+ 		"defaultSkill" "assassin_lethal_strike"
 
  		"soundConfig"
 		{

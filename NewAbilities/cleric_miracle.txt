@@ -1,4 +1,4 @@
-"cleric_solemn_vow"
+"cleric_miracle"
 {
     "AbilityBehavior"           "POINT_TARGET | AOE | NEEDS_VALID_TERRAIN"
 
@@ -34,7 +34,7 @@
         "03"
         {
             "var_type"      "FIELD_FLOAT"
-            "duration"      "3"
+            "duration"      "2"
         }
     }
 

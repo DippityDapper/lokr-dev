@@ -4,11 +4,11 @@
     "AbilityTeamFilter"     "TEAM_FRIENDLY"
 
     "AnimationID"           "SpellCastB"
-    "CastFXId"              "ShadowStrikeCastFXMega"
-    "Icon"                  "Spiderstance"
+    "CastFXId"              "OrcCleaverParryStanceCastFXMega"
+    "Icon"                  "Remise"
 
     "AbilityCastRange"      "0"
-    "AbilityCooldown"       "2"
+    "AbilityCooldown"       "3"
     "AbilityAPCost"         "1"
 
      "AbilitySpecial"
@@ -24,18 +24,56 @@
             "var_type"      "FIELD_FLOAT"
             "dodgeChance"   "100"
         }
+		
+		"03"
+		{
+			"var_type" 		"FIELD_FLOAT"
+			"extraDamage"	"3"
+		}
     }
 
 
     "OnAbilityAction"
     {
-        "ApplyModifier"
-        {
-            "ModifierName"      "assassin_counterattack_modifier"
-            "Target"            "%TARGET"
-            "Duration"          "%duration"
-            "Refresh"           "1"
-        }
+		"Conditional"
+		{
+			"Condition" "hasModifier(%TARGET, #athletics_endturn_trait_modifier_active)"
+			
+			"Actions"
+			{
+				"ApplyModifier"
+				{
+					"ModifierName"      "assassin_counterattack_epic_modifier"
+					"Target"            "%TARGET"
+					"Duration"          "%duration"
+					"Refresh"           "1"
+				}
+			
+				"HitLegendaryTriggered"
+				{
+					"Unit"              "%TARGET"
+				}
+				
+				"ApplyModifier"
+				{
+					"ModifierName"      "assassin_counterattack_modifier"
+					"Target"            "%TARGET"
+					"Duration"          "%duration"
+					"Refresh"           "1"
+				}
+			}
+			
+			"ElseActions"
+			{
+				"ApplyModifier"
+				{
+					"ModifierName"      "assassin_counterattack_modifier"
+					"Target"            "%TARGET"
+					"Duration"          "%duration"
+					"Refresh"           "1"
+				}
+			}
+		}
     }
 
     "Modifiers"
@@ -74,5 +112,19 @@
                 }
             }
         }
+		
+		"assassin_counterattack_epic_modifier"
+		{
+            "Tags"              "shield"
+            "EffectName"        "AsraSpiderStanceStatusFXMega"
+            "Icon"              "Enraged01"
+            "IconPriority"      "50"
+
+            "PropertiesAdd"
+            {
+				"extraDamage"       "%extraDamage"
+            }
+        }
+		
     }
 }
