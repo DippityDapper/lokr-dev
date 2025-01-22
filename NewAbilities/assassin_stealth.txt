@@ -5,7 +5,7 @@
 
     "AnimationID"           "SpellCastB"
     "CastFXId"              "ShadowStrikeCastFXMega"
-    "Icon"                  "ShadowsLullaby"
+    "Icon"                  "AjaxsBlessing"
 
     "AbilityCastRange"      "0"
     "AbilityCooldown"       "4"
@@ -15,15 +15,21 @@
     {
         "01"
         {
-            "var_type"      "FIELD_FLOAT"
-            "duration"      "2"
+            "var_type"      	"FIELD_FLOAT"
+            "duration"      	"2"
 		}
 
 		"02"
 		{
-			"var_type"      "FIELD_FLOAT"
-            "extraDamage"   "3"
+			"var_type"      	"FIELD_FLOAT"
+            "extraDamage"   	"3"
         }
+		
+		"03"
+		{
+			"var_type"			"FIELD_FLOAT"
+			"extraExtraDamage"	"4"
+		}
     }
 
 
@@ -39,6 +45,14 @@
                 "ApplyModifier"
                 {
                     "ModifierName"      "assassin_stealth_epic_modifier"
+                    "Target"            "%TARGET"
+                    "Duration"          "%duration"
+                    "Refresh"           "1"
+                }
+
+				"ApplyModifier"
+                {
+                    "ModifierName"      "assassin_stealth_modifier"
                     "Target"            "%TARGET"
                     "Duration"          "%duration"
                     "Refresh"           "1"
@@ -62,7 +76,26 @@
             }
         }
 		
-
+		"Conditional"
+		{
+			"Condition" "hasModifier(%TARGET, #assassin_counterattack_epic_modifier)"
+			
+			"Actions"
+			{
+				"ApplyModifier"
+				{
+					"ModifierName"      "assassin_stealth_epic_epic_modifier"
+                    "Target"            "%TARGET"
+                    "Duration"          "%duration"
+                    "Refresh"           "1"
+				}
+			
+				"HitLegendaryTriggered"
+                {
+                    "Unit"              "%TARGET"
+                }
+			}
+		}
     }
 
     "Modifiers"
@@ -71,7 +104,7 @@
         {
             "Tags"              "shield"
             "EffectName"        "AsraSpiderStanceStatusFXMega"
-            "Icon"              "Summoned"
+            "Icon"              "ShieldOfShadows"
             "IconPriority"      "50"
             
             "States"
@@ -100,18 +133,20 @@
                 "extraDamage"       "%extraDamage"
             }
             
-            "States"
+        }
+		
+		"assassin_stealth_epic_epic_modifier"
+		{
+            "Tags"              "shield"
+            "EffectName"        "AsraSpiderStanceStatusFXMega"
+            "Icon"              "Enraged01"
+            "IconPriority"      "50"
+			
+			"PropertiesAdd"
             {
-                "NON_TARGETABLE"            "1"
-
-                "CANT_BE_POISONED"          "1"
-                "CANT_BE_BURNT"             "1"
-                "CANT_BE_BLED"              "1"
-                "CANT_BE_STUNNED"           "1"
-                "CANT_BE_ROOTED"            "1"
-                "CANT_BE_ASLEPT"            "1"
-                "CANT_BE_FROZEN"            "1"
+                "extraDamage"       "%extraExtraDamage"
             }
+            
         }
     }
 }

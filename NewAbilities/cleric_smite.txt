@@ -1,0 +1,135 @@
+"cleric_smite"
+{
+    "AbilityBehavior"               "UNIT_TARGET"
+    "AbilityTeamFilter"             "TEAM_ENEMY"
+    "AbilityCastRange"              "stat(%CASTER, #rangedAttackRange)"
+    "AbilityCooldown"               "4"
+    "AbilityAPCost"                 "1"
+
+    "AnimationID"                   "SpellCastB"
+    "CastFXId"                      "GenericHolyCastFXMega"
+    "Icon"                          "HolyWrath"
+   
+    "AbilitySpecial" 
+    {
+        "01"
+        {
+            "var_type"              "FIELD_EXPRESSION"        
+            "numberOfHits"          "stat(%CASTER, #attackDamage)"
+        }
+
+        "02"
+        {
+            "var_type"              "FIELD_FLOAT"        
+            "damage"          		"3"
+        }
+
+        "03"
+        {
+            "var_type"              "FIELD_FLOAT"        
+            "maxDistance"           "3"
+        }
+    }
+
+    "OnAbilityAction"
+    {
+        "StartLogicTick"
+        {
+            "Time"                  "0.8"
+            "TickType"              "ActiveUnit"
+            "Position"              "unitPosition(%SOURCE)"
+        }
+			
+		"Delay"
+		{
+				"Time"				"0.8"
+				
+				"Actions"
+				{
+					"Hit"
+					{
+					
+					"Target"        "%TARGET"
+                    "Tags"          "stringList(#PROJECTILE, #TARGETED)"
+                    "EffectName"    "TeslaThunderStrikeHitFXMega"
+
+                    "InitActions"
+                    {
+                        "AddDamage"
+                        {
+                            "Type"          "DAMAGE_MAGICAL"
+                            "Damage"        "2"
+                        }
+                    }
+				}
+			}
+			
+		}
+		
+        "Delay"
+        {
+            "Time"                  "0.8"
+
+            "Actions"
+            {
+
+                "Hit"
+                {
+                    "Target"        "%TARGET"
+                    "Tags"          "stringList(#PROJECTILE, #TARGETED)"
+                    "EffectName"    "TeslaThunderStrikeHitFXMega"
+
+                    "InitActions"
+                    {
+                        "AddDamage"
+                        {
+                            "Type"          "DAMAGE_MAGICAL"
+                            "Damage"        "2"
+                        }
+                    }
+                }
+
+                "Delay"
+                {
+                    "Time"                  "0.5"
+
+                    "Actions"
+                    {
+                        "ActOnTargets"
+                        {
+                            "Target"
+                            {
+                                "Center"        "%TARGET"
+                                "Radius"        "%maxDistance"
+                                "Teams"         "TEAM_ENEMY"
+                                "Random"        "1"
+                                "MaxTargets"    "expr(%numberOfHits)"
+                            }
+							
+							"IteratorName"      "#newTarget"
+                        
+                            "Actions"    
+                            {
+                                "Hit"
+                                {
+                                    "Target"            "%newTarget"
+                                    "Tags"              "stringList(#PROJECTILE, #TARGETED)"
+                                    "EffectName"        "TeslaThunderStrikeHitFXMega"
+
+                                    "InitActions"
+                                    {
+                                        "AddDamage"
+                                        {
+                                            "Type"          "DAMAGE_MAGICAL"
+                                            "Damage"        "2"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

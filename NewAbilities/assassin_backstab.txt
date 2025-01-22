@@ -4,11 +4,11 @@
     "AbilityTeamFilter"         "TEAM_ENEMY"
     
     "AbilityCastRange"          "20"
-    "AbilityCooldown"           "5"
+    "AbilityCooldown"           "2"
     "AbilityAPCost"             "2"
     "AnimationID"               "Attack"
     "CastFXId"                  "ShadowStrikeCastFXMega"
-    "Icon"                      "ShadowStrike"
+    "Icon"                      "OpportunityStrike"
 
    
     "AbilitySpecial" 
@@ -17,12 +17,6 @@
         {
             "var_type"              "FIELD_EXPRESSION"
             "damage"                "stat(%CASTER, #attackDamage)"
-        }
-
-        "02"
-        {
-            "var_type"              "FIELD_FLOAT"
-            "cooldownOffset"        "1"
         }
     }
 
@@ -68,10 +62,19 @@
             "ModifierName"      "assassin_backstab_detect_modifier"
             "Target"            "%SOURCE"
         }
+		
+		"SetStat"
+        {
+            "Target" "%SOURCE"
+            "Stat" "#actionsAvailable"
+            "Value" "stat(%SOURCE, #actionsAvailable) + 1"
+        }
+		
     }        
             
     "Modifiers"
     {
+	
         "assassin_backstab_detect_modifier"
         {
             "OnUnitDiedGlobal"
@@ -81,17 +84,28 @@
                     "Condition" "equal(%INSTIGATOR, %TARGET) && matchesGroup(unitGroup(%DEAD), @UnitGroup(BadSide)) && not(isOnState(%DEAD, #NO_SKULL)) && not(isOnState(%DEAD, #IS_CINEMATIC))"
                     "Actions"
                     {
-                        "MarkHitLegendary"
-                        {
-                        }
-
-                        "OffsetCooldown"
-                        {
-                            "Target" "%SOURCE"
-                            "Offset" "0-%cooldownOffset"
-                        }
+                       "HitLegendaryTriggered"
+						{
+							"Unit"              "%SOURCE"
+						}
+						"ApplyModifier"
+						{
+							"ModifierName"  "arcane_replenish_trait_status_modifier"
+							"Target"        "%SOURCE"
+							"Duration"      "1" 
+							"Refresh"       "1" 
+						}
                     }
+					
                 }
+            }
+        }
+		
+		"arcane_replenish_trait_status_modifier"
+        {
+            "PropertiesAdd"
+            {
+                "cooldownOffset" "-999"
             }
         }
     }

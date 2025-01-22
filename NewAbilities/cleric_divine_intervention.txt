@@ -1,4 +1,4 @@
-"cleric_healing_light"
+"cleric_divine_intervention"
 {
     "AbilityBehavior"           "POINT_TARGET | AOE | POSITIVE_EFFECT"
     "AbilityAOETeamFilter"      "TEAM_FRIENDLY"
@@ -11,9 +11,8 @@
     "AbilityAOECenterOnCaster"  "0"
     "AbilityAOEAffectsCaster"   "1"
 
-    "AbilityCanExecute"         "stat(%SOURCE, #holyPoints) > %faithMin - 1"
     "AbilityAOERange"           "%aoeRadius"
-    "AbilityCastRange"          "20"
+    "AbilityCastRange"          "stat(%CASTER, #rangedAttackRange)"
     "AbilityCooldown"           "4"
     "AbilityAPCost"             "2"
 
@@ -21,21 +20,22 @@
     {
         "01"
         {
-            "var_type"      "FIELD_FLOAT"
-            "heal"          "3"
+            "var_type"      			"FIELD_FLOAT"
+            "damageReduction"           "1"
         }
 
         "02"
         {
-            "var_type"      "FIELD_FLOAT"
-            "aoeRadius"     "1"
+            "var_type"      			"FIELD_FLOAT"
+            "aoeRadius"     			"1"
         }
+		
+		"03"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"duration"					"2"
+		}
 
-        "03"
-        {
-            "var_type"      "FIELD_FLOAT"
-            "faithMin"      "2"
-        }
     }
 
 
@@ -73,10 +73,11 @@
                 
                     "Actions"    
                     {
-                        "Heal"
+                        "ApplyModifier"
                         {
-                            "Target"        "%newTarget"
-                            "HealAmount"    "%heal"
+                            "ModifierName"      "cleric_divine_intervention_modifier"
+							"Target"            "%newTarget"
+							"Duration"          "%duration"
                         }
 
                         "RemoveModifier"
@@ -94,14 +95,41 @@
                 }
             }
         }
-
-        "RemoveModifier"
-        {
-            "ModifierName"  "cleric_holy_points_modifier"
-            "Target"        "%SOURCE"
-        }
     }
+	
+	"Modifiers"
+	{
+		"cleric_divine_intervention_modifier"
+		{
+			"OnHitPreProcessDamages"
+            {
+                "AddDamage"
+                {
+                    "Type"              "DAMAGE_PHYSICAL"
+                    "Damage"            "%damageReduction"
+                }
 
+                "AddDamage"
+                {
+                    "Type"              "DAMAGE_MAGICAL"
+                    "Damage"            "%damageReduction"
+                }
+
+                "AddDamage"
+                {
+                    "Type"              "DAMAGE_TRUE"
+                    "Damage"            "%damageReduction"
+                }
+
+                "AttachEffect"
+                {
+                    "EffectName"        "MartyrsInspirationShieldFXMega"
+                    "Target"            "%ATTACKED"
+                }
+            }
+		}
+	}
+	
     "AIConfigB"
     {
         "Selection" 

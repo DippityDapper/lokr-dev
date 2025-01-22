@@ -1,104 +1,87 @@
 "cleric_providence"
 {
-    
-    
-    "AbilityBehavior"           "UNIT_TARGET | POSITIVE_EFFECT"
+    "AbilityBehavior"           "UNIT_TARGET | POSITIVE_EFFECT | AOE"
     "AbilityTeamFilter"         "TEAM_FRIENDLY"
-    "AbilityCustomTargetFilter" "not(equal(%UNIT, %SOURCE))"
-
-    "AnimationID"               "SpellCastA"
-    "CastFXId"                  "GenericHolyCastFXMega"
-    "Icon"                      "ShieldBash02"
-
-    "AbilityCastRange"          "stat(%CASTER, #rangedAttackRange)"
+    "AbilityCastRange"          "0"
     "AbilityCooldown"           "3"
     "AbilityAPCost"             "1"
+    "AbilityAOETeamFilter"      "TEAM_FRIENDLY"
+    "AbilityAOERange"           "%aoeRadius"
+    "AbilityAOEKind"            "RANGE_CIRCLE"
+    "AbilityAOECenterOnCaster"  "1"
+    "AbilityAOEAffectsCaster"   "1"
+
+    "AnimationID"               "SpellCastA"
+    "CastFXId"                  "MartyrsInspirationCastFXMega"
+    "Icon"                      "MartyrsInspiration"
 
 
-    "AbilitySpecial"
+     "AbilitySpecial"
     {
         "01"
-        {
-            "var_type"          "FIELD_EXPRESSION"
-            "duration"          "stat(%CASTER, #holyPoints) + 1"
-        }
+		{
+			"var_type"			"FIELD_FLOAT"
+			"cooldownOffset"	"1"
+		}
 
         "02"
         {
             "var_type"          "FIELD_FLOAT"
-            "damageReduction"   "-1"
-        }
-
-        "03"
-        {
-            "var_type"          "FIELD_FLOAT"
-            "extraDamage"       "1"
-        }
+            "aoeRadius"         "1"
+        }        
     }
 
 
     "OnAbilityAction"
     {
-        "ApplyModifier"
+        "ActOnTargets"
         {
-            "ModifierName"  "modifier_blessing_of_providence"
-            "Target"        "%TARGET"
-            "Duration"      "expr(%duration)"
-        }
+            "Target"
+            {
+                "Center"            "%TARGET"
+                "Radius"            "%aoeRadius"
+                "Teams"             "TEAM_FRIENDLY"
+            }
 
-        "ApplyModifier"
-        {
-            "ModifierName"  "modifier_blessing_of_providence"
-            "Target"        "%CASTER"
-            "Duration"      "expr(%duration)"
-        }
+            "IteratorName" "#newTarget"
+        
+            "Actions"    
+            {				
+               "OffsetCooldown"
+                {
+                    "Target" 		"%newTarget"
+                    "Offset" 		"0-%cooldownOffset"
+                }
+				
+				"UnitRaiseMessage"
+                {
+                    "Unit" 		"%newTarget"
+                    "#Text" 	"REPLENISHED!!"
+                    "Icon" 		"Preparation"
+                }
+            }
 
-        "RemoveModifier"
-        {
-            "ModifierName"  "cleric_holy_points_modifier"
-            "Target"        "%SOURCE"
         }
     }
 
 
-    "Modifiers"
+    "AIConfigB"
     {
-        "modifier_blessing_of_providence"
+        "Selection" 
         {
-            "EffectName"    "MartyrsInspirationStatusFXMega"
-            "Icon"          "ParryStance"
-            "IconPriority"  "50"
-
-            "OnHitPreProcessDamages"
+            "Weight" "4"
+            "Considerations"
             {
-                "AddDamage"
-                {
-                    "Type"              "DAMAGE_PHYSICAL"
-                    "Damage"            "%damageReduction"
-                }
 
-                "AddDamage"
+                "Priorizacion Por Distance mas cercano"
                 {
-                    "Type"              "DAMAGE_MAGICAL"
-                    "Damage"            "%damageReduction"
+                    "Curve" "Linear|-0.1|1|1|0"
+                    "Consideration" "DistanceToTarget"
+                    "Params"
+                    {
+                        "MaxRange" "10"  
+                    }
                 }
-
-                "AddDamage"
-                {
-                    "Type"              "DAMAGE_TRUE"
-                    "Damage"            "%damageReduction"
-                }
-
-                "AttachEffect"
-                {
-                    "EffectName"        "MartyrsInspirationShieldFXMega"
-                    "Target"            "%ATTACKED"
-                }
-            }
-
-            "PropertiesAdd"
-            {
-                "extraDamage" "%extraDamage"
             }
         }
     }

@@ -1,4 +1,4 @@
-"assassin_aimed_slash"
+"assassin_lethal_strike"
 {
     "AbilityBehavior"   "MELEE | HAS_CHANCE_TO_HIT"
     "AbilityTeamFilter" "TEAM_ENEMY"
@@ -6,7 +6,7 @@
     "AbilityCooldown"   "0"
     "AbilityAPCost"     "stat(%CASTER, #attackCostAP)"
     "AnimationID"   "Attack"
-    "Icon" "Shiv"
+    "Icon" "Slash"
     "CastFXId" "CommonSlashSoundFXMega"
 
     "AbilitySpecial" 

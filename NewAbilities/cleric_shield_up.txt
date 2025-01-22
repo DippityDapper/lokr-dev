@@ -1,0 +1,70 @@
+"cleric_shield_up"
+{
+    "AbilityBehavior"       "PASSIVE"
+
+    "Icon" "ShieldUp"
+
+    "AbilitySpecial"
+    {
+		"01"
+        {
+            "var_type"                  "FIELD_FLOAT"
+            "extraArmor"                "2"
+        }
+    }
+
+    "Modifiers"
+    {
+        "cleric_shield_up_modifier_provider"
+        {
+            "Passive"       "1"
+
+            "OnTurnStarted"
+            {
+                "ApplyModifier"
+                {
+                    "ModifierName"      "cleric_shield_up_modifier"
+                    "Target"            "%TARGET"
+                    "Duration"          "0"
+                }
+            }
+        }
+
+        "cleric_shield_up_modifier"
+        {
+            "EffectName"                "KnightHoldTheLineStatusFXMega"
+
+            "PropertiesAdd"
+            {
+                "armor_max"     "%extraArmor"
+            }
+
+            "OnAdded"
+            {
+                "GiveArmor"
+                {
+                    "Target"            "%TARGET"
+                    "ArmorAmount"       "%extraArmor"
+                }
+            }
+			
+			"OnRemoved"
+			{
+				"GiveArmor"
+				{
+					"Target"			"%TARGET"
+					"ArmorArmount"		"0"
+				}
+			}
+
+            "OnUnitLeavingNode"
+            {
+                "RemoveModifier"
+                {
+                    "ModifierName"      "cleric_shield_up_modifier"
+                    "Target"            "%TARGET"
+                }   
+            }
+        }
+    }
+}
