@@ -1,15 +1,14 @@
 "cleric_shield_up"
 {
     "AbilityBehavior"       "PASSIVE"
+    "Icon"                  "ShieldUp"
 
-    "Icon" "ShieldUp"
-
-    "AbilitySpecial"
+     "AbilitySpecial"
     {
-		"01"
+        "01"
         {
-            "var_type"                  "FIELD_FLOAT"
-            "extraArmor"                "2"
+            "var_type"      "FIELD_FLOAT"
+            "extraArmor"     "2"
         }
     }
 
@@ -25,7 +24,15 @@
                 {
                     "ModifierName"      "cleric_shield_up_modifier"
                     "Target"            "%TARGET"
-                    "Duration"          "0"
+                    "Duration"          "1"
+                    "Params"
+                    {
+                        "shield_up_extra_armor_bonus" 
+                        {
+                            "type" "FIELD_FLOAT"
+                            "value" "%extraArmor"
+                        }
+                    }
                 }
             }
         }
@@ -36,26 +43,26 @@
 
             "PropertiesAdd"
             {
-                "armor_max"     "%extraArmor"
+                "armor_max"             "%shield_up_extra_armor_bonus"
             }
 
+            "OnRemoved"
+            {
+                "GiveArmor"
+                {
+                    "Target" "%TARGET"
+                    "ArmorAmount" "0"
+                }
+            }
+            
             "OnAdded"
             {
                 "GiveArmor"
                 {
                     "Target"            "%TARGET"
-                    "ArmorAmount"       "%extraArmor"
+                    "ArmorAmount"       "%shield_up_extra_armor_bonus"
                 }
             }
-			
-			"OnRemoved"
-			{
-				"GiveArmor"
-				{
-					"Target"			"%TARGET"
-					"ArmorArmount"		"0"
-				}
-			}
 
             "OnUnitLeavingNode"
             {
@@ -63,7 +70,7 @@
                 {
                     "ModifierName"      "cleric_shield_up_modifier"
                     "Target"            "%TARGET"
-                }   
+                }
             }
         }
     }
