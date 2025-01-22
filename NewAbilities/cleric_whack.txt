@@ -27,6 +27,12 @@
             "var_type"                  "FIELD_FLOAT"
             "extraArmor"                "2"
         }
+
+        "04"
+        {
+            "var_type"              "FIELD_FLOAT"
+            "duration"              "2"   
+        }
     }
 
 
