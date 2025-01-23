@@ -2518,7 +2518,7 @@
 		"MetaExo" "ExoSkeletonHumanCleric_MetaDataAsset"
 		"Name" "MINION_CLERIC"
 		"InheritsFrom" "Hero"
-		"cinematicTags""Minion|Cleric|Male|ct_minion|ct_human|ct_holy|ct_might|ct_social|ct_wisdom|UPGRADES_magic"
+		"cinematicTags""Minion|Cleric|Male|ct_minion|ct_human|ct_holy|ct_magic|ct_social|ct_wisdom|UPGRADES_magic"
 		"nextLevelArchetype" "MinionClericLvl2"
 		"Icon" "Asst_Banner_Cleric"
 		"Background" "hero_roster_legend_bg_forest"

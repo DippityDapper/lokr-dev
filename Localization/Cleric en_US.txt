@@ -2,36 +2,39 @@
 "UNIT_MINION_CLERIC_LORE" = "The clerics enact their holy power through combat and devout study of divine magic. They speak their message softly but carry a big stick for good measure."
 
 
+
 "SKILL_cleric_whack_NAME" = "Whack"
 "SKILL_cleric_whack_DESCRIPTION" = "Strikes the target, dealing physical damage."
-"SKILL_cleric_whack_DESCRIPTION_EPIC" = "<style="epic">EPIC:</style> Gain +2 armor for slaying an enemy with this skill."
-"SKILL_cleric_whack_DESCRIPTION_DATA" = "Damage: <style="rangeofdamage">{MinDamage} - {MaxDamage} {icon#damagePhysical}</style>\nRange: <style="highlight">MELEE</style>"
+"SKILL_cleric_whack_DESCRIPTION_EPIC" = "<style="epic">EPIC:</style> Gain temporary extra armor for slaying an enemy with this skill."
+"SKILL_cleric_whack_DESCRIPTION_DATA" = "Damage: <style="rangeofdamage">{MinDamage} - {MaxDamage} {icon#damagePhysical}</style>\nEpic Armor: <style="buff">+{extraArmor} {icon#statArmor}</style>\nRange: <style="highlight">MELEE</style>"
 
 "SKILL_cleric_shield_up_NAME" = "Shield Up"
-"SKILL_cleric_shield_up_DESCRIPTION" = "Staying in place for the entire turn will grant the Cleric +2 armor."
-"SKILL_cleric_shield_up_DESCRIPTION_DATA" = "Bonus Armor: <style="highlight">{extraArmor}</style>"
+"SKILL_cleric_shield_up_DESCRIPTION" = "Grants the Cleric extra armor if he doesn't move during his turn."
+"SKILL_cleric_shield_up_DESCRIPTION_DATA" = "Bonus Armor: <style="buff">+{desc_armor_stat} {icon#statArmor}</style>"
 
 "SKILL_cleric_communion_NAME" = "Communion"
-"SKILL_cleric_communion_DESCRIPTION" = "With a prayer, the Cleric gives a selected ally and himself <style="highlight">+1</style> increased attack for 2 turns."
+"SKILL_cleric_communion_DESCRIPTION" = "With a prayer, the Cleric gives an ally and himself increased attack."
 "SKILL_cleric_communion_DESCRIPTION_DATA" = "Attack Bonus: <style="buff">+{extraDamage} {icon#damagePhysical}</style>\nDuration: <style="highlight">{duration}</style> {icon#turns}\nRange: <style="highlight">{AbilityCastRange}</style>"
 "SKILL_cleric_communion_DESCRIPTION_EXTRA" = "<style="extra">The ability automatically buffs the Cleric.</style>"
 
 "SKILL_cleric_miracle_NAME" = "Miracle"
-"SKILL_cleric_miracle_DESCRIPTION" = "Summons a curse on enemies that nullifies their damage to 0 for a time."
+"SKILL_cleric_miracle_DESCRIPTION" = "Summons a curse on enemies that negates their damage stat to 0 for a time."
 "SKILL_cleric_miracle_DESCRIPTION_DATA" = "Duration: <style="highlight">{duration}</style> {icon#turns}\nRange: <style="highlight">{AbilityCastRange}</style>"
 
 "SKILL_cleric_providence_NAME" = "Providence"
-"SKILL_cleric_providence_DESCRIPTION" = "The Cleric invigorates surrounding allies with a holy blessing, reducing their abilities's cooldowns by 1 turn."
-"SKILL_cleric_providence_DESCRIPTION_DATA" = "Cooldown Reduction: <style="highlight">{cooldownOffset}</style> {icon#turns}\nRange: <style="highlight">{aoeRadius}</style>"
+"SKILL_cleric_providence_DESCRIPTION" = "The Cleric rejuvenates surrounding allies with a holy blessing, reducing their ability cooldowns."
+"SKILL_cleric_providence_DESCRIPTION_DATA" = "Cooldown Reduction: <style="highlight">{cooldownOffset}</style> {icon#turns}\nRange: <style="highlight">SELF</style>"
 
 "SKILL_cleric_divine_intervention_NAME" = "Divine Intervention"
-"SKILL_cleric_divine_intervention_DESCRIPTION" = "Invokes the power of God to summon a beam of cleansing light which will grant damage reductionand remove all <style="debuff">weakened</style> debuffs."
-"SKILL_cleric_divine_intervention_DESCRIPTION_DATA" = "Duration: <style="highlight">{duration}</style> {icon#turns}\nDamage Reduction: <style="highlight">{damageReduction}\nRange: <style="highlight">{AbilityCastRange}</style>"
+"SKILL_cleric_divine_intervention_DESCRIPTION" = "Invokes the power of the gods to summon a beam of cleansing light which grants damage reduction and removes all <style="debuff">weakened</style> debuffs."
+"SKILL_cleric_divine_intervention_DESCRIPTION_DATA" = "Damage Reduction: <style="buff">{damageReduction} {icon#damageTrue}</style>\nDuration: <style="highlight">{duration}</style> {icon#turns}\nRange: <style="highlight">{AbilityCastRange}</style>"
 
 "SKILL_cleric_smite_NAME" = "Smite"
 "SKILL_cleric_smite_DESCRIPTION" = "Calls upon the wrath of the heavens to strike enemies with 1 bolt of lightning for each point of the Cleric's attack damage."
-"SKILL_cleric_smite_DESCRIPTION_DATA" = "Damage: <style="highlight">{damage} {icon#damageTrue}</style>\nNumber of Bolts: <style="highlight">{numberOfHits}</style>\nAOE size: <style="highlight">{maxDistance}</style>"
+"SKILL_cleric_smite_DESCRIPTION_DATA" = "Damage: <style="damage">{damage} {icon#damageTrue}</style>\nNumber of Bolts: <style="highlight">{numberOfHits}</style>\nAOE size: <style="highlight">{maxDistance}</style>"
 "SKILL_cleric_smite_DESCRIPTION_EXTRA" = "<style="extra">This skill will not repeat targets until every possible target has been struck at least once.</style>"
+
+
 
 "COMBAT_MODIFIER_modifier_cleric_vow_of_peace_TITLE" = "Nullified"
 "COMBAT_MODIFIER_modifier_cleric_vow_of_peace_DESCRIPTION" = "This unit's damage stat is reduced to 0. Flat damage scaling on abilities is unaffected."

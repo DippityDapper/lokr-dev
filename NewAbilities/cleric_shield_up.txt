@@ -10,6 +10,12 @@
             "var_type"              "FIELD_FLOAT"
             "damageReduction"       "-1"
         }
+
+        "02"
+        {
+            "var_type"              "FIELD_FLOAT"
+            "desc_armor_stat"       "2"
+        }
     }
 
     "Modifiers"
