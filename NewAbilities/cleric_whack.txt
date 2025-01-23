@@ -82,7 +82,6 @@
 	{
 		"modifier_whack_epic"
 		{
-			"EffectName"                "KnightHoldTheLineStatusFXMega"
             "Icon"                      "Fortify"
             "IconPriority"              "50"
 

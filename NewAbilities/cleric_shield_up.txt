@@ -7,37 +7,62 @@
     {
         "01"
         {
-            "var_type"      "FIELD_FLOAT"
-            "extraArmor"     "2"
+            "var_type"              "FIELD_FLOAT"
+            "damageReduction"       "-1"
         }
     }
 
     "Modifiers"
     {
-        "cleric_shield_up_modifier_provider"
+        "cleric_buff_modifier_provider"
         {
             "Passive"       "1"
 
             "OnTurnStarted"
             {
+                "RemoveModifier"
+                {
+                    "ModifierName"      "cleric_buff_modifier"
+                    "Target"            "%TARGET"
+                }
+                
                 "ApplyModifier"
                 {
-                    "ModifierName"      "cleric_shield_up_modifier"
+                    "ModifierName"      "cleric_buff_monitor_modifier"
                     "Target"            "%TARGET"
-                    "Duration"          "1"
-                    "Params"
-                    {
-                        "shield_up_extra_armor_bonus" 
-                        {
-                            "type" "FIELD_FLOAT"
-                            "value" "%extraArmor"
-                        }
-                    }
                 }
             }
         }
 
-        "cleric_shield_up_modifier"
+        "cleric_buff_monitor_modifier"
+        {
+            "OnUnitLeavingNode"
+            {
+                "RemoveModifier"
+                {
+                    "ModifierName"      "cleric_buff_monitor_modifier"
+                    "Target"            "%TARGET"
+                }
+            }
+            
+            "OnTurnFinished"
+            {
+                "ApplyModifier"
+                {
+                    "ModifierName"      "cleric_buff_modifier"
+                    "Target"            "%TARGET"
+                    "Duration"          "%duration"
+                }
+
+                "RemoveModifier"
+                {
+                    "ModifierName"      "cleric_buff_monitor_modifier"
+                    "Target"            "%TARGET"
+                }
+            }
+        }
+        
+        "cleric_buff_modifier"
         {
             "EffectName"                "KnightHoldTheLineStatusFXMega"
             "Icon"          "Fortify"
@@ -46,7 +71,7 @@
 
             "PropertiesAdd"
             {
-                "armor_max"             "%shield_up_extra_armor_bonus"
+                "armor_max"             "2"
             }
 
             "OnRemoved"
@@ -63,16 +88,7 @@
                 "GiveArmor"
                 {
                     "Target"            "%TARGET"
-                    "ArmorAmount"       "%shield_up_extra_armor_bonus"
-                }
-            }
-
-            "OnUnitLeavingNode"
-            {
-                "RemoveModifier"
-                {
-                    "ModifierName"      "cleric_shield_up_modifier"
-                    "Target"            "%TARGET"
+                    "ArmorAmount"       "2"
                 }
             }
         }
