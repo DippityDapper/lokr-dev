@@ -5,7 +5,7 @@
 
     "AnimationID"               "SpellCastB"
     "CastFXId"                  "HealingCastFXMega"
-    "Icon"                      "HealingLight02"
+    "Icon"                      "ShieldWall02"
     
     "AbilityAOEKind"            "RANGE_CIRCLE"
     "AbilityAOECenterOnCaster"  "0"

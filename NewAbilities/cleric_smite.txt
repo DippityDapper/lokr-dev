@@ -4,7 +4,7 @@
     "AbilityTeamFilter"             "TEAM_ENEMY"
     "AbilityCastRange"              "stat(%CASTER, #rangedAttackRange)"
     "AbilityCooldown"               "4"
-    "AbilityAPCost"                 "1"
+    "AbilityAPCost"                 "2"
 
     "AnimationID"                   "SpellCastB"
     "CastFXId"                      "GenericHolyCastFXMega"
@@ -40,31 +40,6 @@
             "Position"              "unitPosition(%SOURCE)"
         }
 			
-		"Delay"
-		{
-				"Time"				"0.8"
-				
-				"Actions"
-				{
-					"Hit"
-					{
-					
-					"Target"        "%TARGET"
-                    "Tags"          "stringList(#PROJECTILE, #TARGETED)"
-                    "EffectName"    "TeslaThunderStrikeHitFXMega"
-
-                    "InitActions"
-                    {
-                        "AddDamage"
-                        {
-                            "Type"          "DAMAGE_MAGICAL"
-                            "Damage"        "2"
-                        }
-                    }
-				}
-			}
-			
-		}
 		
         "Delay"
         {
@@ -83,15 +58,15 @@
                     {
                         "AddDamage"
                         {
-                            "Type"          "DAMAGE_MAGICAL"
-                            "Damage"        "2"
+                            "Type"          "DAMAGE_TRUE"
+                            "Damage"        "%damage"
                         }
                     }
                 }
 
                 "Delay"
                 {
-                    "Time"                  "0.5"
+                    "Time"                  "1.2"
 
                     "Actions"
                     {
@@ -120,8 +95,8 @@
                                     {
                                         "AddDamage"
                                         {
-                                            "Type"          "DAMAGE_MAGICAL"
-                                            "Damage"        "2"
+                                            "Type"          "DAMAGE_TRUE"
+                                            "Damage"        "%damage"
                                         }
                                     }
                                 }

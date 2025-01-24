@@ -1,0 +1,141 @@
+"cleric_unshakable"
+{
+    "AbilityBehavior"       "PASSIVE"
+    "Icon"                  "ShieldBash02"
+
+     "AbilitySpecial"
+    {
+        "01"
+        {
+<<<<<<< Updated upstream:NewAbilities/cleric_shield_up.txt
+            "var_type"      "FIELD_FLOAT"
+            "extraArmor"     "2"
+=======
+            "var_type"              "FIELD_FLOAT"
+            "extraArmor"       		"2"
+>>>>>>> Stashed changes:NewAbilities/cleric_unshakable.txt
+        }
+    }
+
+    "Modifiers"
+    {
+<<<<<<< Updated upstream:NewAbilities/cleric_shield_up.txt
+        "cleric_shield_up_modifier_provider"
+=======
+        "cleric_unshakable_modifier_provider"
+>>>>>>> Stashed changes:NewAbilities/cleric_unshakable.txt
+        {
+            "Passive"       "1"
+
+            "OnTurnStarted"
+            {
+<<<<<<< Updated upstream:NewAbilities/cleric_shield_up.txt
+                "ApplyModifier"
+                {
+                    "ModifierName"      "cleric_shield_up_modifier"
+=======
+                "RemoveModifier"
+                {
+                    "ModifierName"      "cleric_unshakable_modifier"
+                    "Target"            "%TARGET"
+                }
+                
+                "ApplyModifier"
+                {
+                    "ModifierName"      "cleric_unshakable_monitor_modifier"
+>>>>>>> Stashed changes:NewAbilities/cleric_unshakable.txt
+                    "Target"            "%TARGET"
+                    "Duration"          "1"
+                    "Params"
+                    {
+                        "shield_up_extra_armor_bonus" 
+                        {
+                            "type" "FIELD_FLOAT"
+                            "value" "%extraArmor"
+                        }
+                    }
+                }
+            }
+        }
+
+<<<<<<< Updated upstream:NewAbilities/cleric_shield_up.txt
+        "cleric_shield_up_modifier"
+=======
+        "cleric_unshakable_monitor_modifier"
+        {
+            "OnUnitLeavingNode"
+            {
+                "RemoveModifier"
+                {
+                    "ModifierName"      "cleric_unshakable_monitor_modifier"
+                    "Target"            "%TARGET"
+                }
+            }
+            
+            "OnTurnFinished"
+            {
+                "ApplyModifier"
+                {
+                    "ModifierName"      "cleric_unshakable_modifier"
+                    "Target"            "%TARGET"
+                    "Duration"          "%duration"
+                }
+
+                "RemoveModifier"
+                {
+                    "ModifierName"      "cleric_unshakable_monitor_modifier"
+                    "Target"            "%TARGET"
+                }
+            }
+        }
+        
+        "cleric_unshakable_modifier"
+>>>>>>> Stashed changes:NewAbilities/cleric_unshakable.txt
+        {
+            "EffectName"                "KnightHoldTheLineStatusFXMega"
+            "Icon"          			"Fortify"
+            "IconPriority"  			"50"
+
+
+            "PropertiesAdd"
+            {
+<<<<<<< Updated upstream:NewAbilities/cleric_shield_up.txt
+                "armor_max"             "%shield_up_extra_armor_bonus"
+=======
+                "armor_max"             "%extraArmor"
+>>>>>>> Stashed changes:NewAbilities/cleric_unshakable.txt
+            }
+
+            "OnRemoved"
+            {
+                "GiveArmor"
+                {
+                    "Target" "%TARGET"
+                    "ArmorAmount" "0"
+                }
+            }
+            
+            "OnAdded"
+            {
+                "GiveArmor"
+                {
+                    "Target"            "%TARGET"
+<<<<<<< Updated upstream:NewAbilities/cleric_shield_up.txt
+                    "ArmorAmount"       "%shield_up_extra_armor_bonus"
+                }
+            }
+
+            "OnUnitLeavingNode"
+            {
+                "RemoveModifier"
+                {
+                    "ModifierName"      "cleric_shield_up_modifier"
+                    "Target"            "%TARGET"
+=======
+                    "ArmorAmount"       "%extraArmor"
+>>>>>>> Stashed changes:NewAbilities/cleric_unshakable.txt
+                }
+            }
+        }
+    }
+}
