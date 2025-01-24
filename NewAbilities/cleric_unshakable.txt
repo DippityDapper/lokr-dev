@@ -1,20 +1,20 @@
-"cleric_shield_up"
+"cleric_unshakable"
 {
     "AbilityBehavior"       "PASSIVE"
-    "Icon"                  "ShieldUp"
+    "Icon"                  "ShieldBash02"
 
      "AbilitySpecial"
     {
         "01"
         {
             "var_type"              "FIELD_FLOAT"
-            "damageReduction"       "-1"
+            "extraArmor"       		"2"
         }
     }
 
     "Modifiers"
     {
-        "cleric_buff_modifier_provider"
+        "cleric_unshakable_modifier_provider"
         {
             "Passive"       "1"
 
@@ -22,25 +22,25 @@
             {
                 "RemoveModifier"
                 {
-                    "ModifierName"      "cleric_buff_modifier"
+                    "ModifierName"      "cleric_unshakable_modifier"
                     "Target"            "%TARGET"
                 }
                 
                 "ApplyModifier"
                 {
-                    "ModifierName"      "cleric_buff_monitor_modifier"
+                    "ModifierName"      "cleric_unshakable_monitor_modifier"
                     "Target"            "%TARGET"
                 }
             }
         }
 
-        "cleric_buff_monitor_modifier"
+        "cleric_unshakable_monitor_modifier"
         {
             "OnUnitLeavingNode"
             {
                 "RemoveModifier"
                 {
-                    "ModifierName"      "cleric_buff_monitor_modifier"
+                    "ModifierName"      "cleric_unshakable_monitor_modifier"
                     "Target"            "%TARGET"
                 }
             }
@@ -49,29 +49,29 @@
             {
                 "ApplyModifier"
                 {
-                    "ModifierName"      "cleric_buff_modifier"
+                    "ModifierName"      "cleric_unshakable_modifier"
                     "Target"            "%TARGET"
                     "Duration"          "%duration"
                 }
 
                 "RemoveModifier"
                 {
-                    "ModifierName"      "cleric_buff_monitor_modifier"
+                    "ModifierName"      "cleric_unshakable_monitor_modifier"
                     "Target"            "%TARGET"
                 }
             }
         }
         
-        "cleric_buff_modifier"
+        "cleric_unshakable_modifier"
         {
             "EffectName"                "KnightHoldTheLineStatusFXMega"
-            "Icon"          "Fortify"
-            "IconPriority"  "50"
+            "Icon"          			"Fortify"
+            "IconPriority"  			"50"
 
 
             "PropertiesAdd"
             {
-                "armor_max"             "2"
+                "armor_max"             "%extraArmor"
             }
 
             "OnRemoved"
@@ -88,7 +88,7 @@
                 "GiveArmor"
                 {
                     "Target"            "%TARGET"
-                    "ArmorAmount"       "2"
+                    "ArmorAmount"       "%extraArmor"
                 }
             }
         }

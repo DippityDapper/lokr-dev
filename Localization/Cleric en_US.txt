@@ -7,18 +7,18 @@
 "SKILL_cleric_whack_DESCRIPTION_EPIC" = "<style="epic">EPIC:</style> Gain +2 armor for slaying an enemy with this skill."
 "SKILL_cleric_whack_DESCRIPTION_DATA" = "Damage: <style="rangeofdamage">{MinDamage} - {MaxDamage} {icon#damagePhysical}</style>\nRange: <style="highlight">MELEE</style>"
 
-"SKILL_cleric_shield_up_NAME" = "Shield Up"
-"SKILL_cleric_shield_up_DESCRIPTION" = "Staying in place for the entire turn will grant the Cleric +2 armor."
-"SKILL_cleric_shield_up_DESCRIPTION_DATA" = "Bonus Armor: <style="highlight">{extraArmor}</style>"
+"SKILL_cleric_unshakable_NAME" = "Unshakable"
+"SKILL_cleric_unshakable_DESCRIPTION" = "The Cleric demonstrates his unshakable faith by standing still, gaining +2 armor until the start of his next turn if he does not move."
+"SKILL_cleric_unshakable_DESCRIPTION_DATA" = "Bonus Armor: <style="highlight">{extraArmor}</style>"
 
 "SKILL_cleric_communion_NAME" = "Communion"
 "SKILL_cleric_communion_DESCRIPTION" = "With a prayer, the Cleric gives a selected ally and himself <style="highlight">+1</style> increased attack for 2 turns."
 "SKILL_cleric_communion_DESCRIPTION_DATA" = "Attack Bonus: <style="buff">+{extraDamage} {icon#damagePhysical}</style>\nDuration: <style="highlight">{duration}</style> {icon#turns}\nRange: <style="highlight">{AbilityCastRange}</style>"
 "SKILL_cleric_communion_DESCRIPTION_EXTRA" = "<style="extra">The ability automatically buffs the Cleric.</style>"
 
-"SKILL_cleric_miracle_NAME" = "Miracle"
-"SKILL_cleric_miracle_DESCRIPTION" = "Summons a curse on enemies that nullifies their damage to 0 for a time."
-"SKILL_cleric_miracle_DESCRIPTION_DATA" = "Duration: <style="highlight">{duration}</style> {icon#turns}\nRange: <style="highlight">{AbilityCastRange}</style>"
+"SKILL_cleric_salvation_NAME" = "Salvation"
+"SKILL_cleric_salvation_DESCRIPTION" = "Prays for a miracle, reducing the attack damage stat of enemies in a targeted area to 1 for 1 turn."
+"SKILL_cleric_salvation_DESCRIPTION_DATA" = "Duration: <style="highlight">{duration}</style> {icon#turns}\nRange: <style="highlight">{AbilityCastRange}</style>"
 
 "SKILL_cleric_providence_NAME" = "Providence"
 "SKILL_cleric_providence_DESCRIPTION" = "The Cleric invigorates surrounding allies with a holy blessing, reducing their abilities's cooldowns by 1 turn."
@@ -33,8 +33,12 @@
 "SKILL_cleric_smite_DESCRIPTION_DATA" = "Damage: <style="highlight">{damage} {icon#damageTrue}</style>\nNumber of Bolts: <style="highlight">{numberOfHits}</style>\nAOE size: <style="highlight">{maxDistance}</style>"
 "SKILL_cleric_smite_DESCRIPTION_EXTRA" = "<style="extra">This skill will not repeat targets until every possible target has been struck at least once.</style>"
 
-"COMBAT_MODIFIER_modifier_cleric_vow_of_peace_TITLE" = "Nullified"
-"COMBAT_MODIFIER_modifier_cleric_vow_of_peace_DESCRIPTION" = "This unit's damage stat is reduced to 0. Flat damage scaling on abilities is unaffected."
+
+"COMBAT_MODIFIER_cleric_unshakable_modifier_TITLE" = "Unshakable Faith"
+"COMBAT_MODIFIER_cleric_unshakable_modifier_DESCRIPTION" = "This unit is blessed by <style="highlight">Unshakable</style>, increasing armor by 2 while standing still."
+
+"COMBAT_MODIFIER_modifier_cleric_salvation_TITLE" = "Enfeebled"
+"COMBAT_MODIFIER_modifier_cleric_salvation_DESCRIPTION" = "This unit's damage stat is reduced to 1. Flat damage scaling on abilities is unaffected."
 
 "COMBAT_MODIFIER_modifier_communion_TITLE" = "Communion"
 "COMBAT_MODIFIER_modifier_communion_DESCRIPTION" = "This unit is blessed by <style="highlight">Communion</style>, increasing their damage by 1."

@@ -1,11 +1,11 @@
-"cleric_miracle"
+"cleric_salvation"
 {
     "AbilityBehavior"           "POINT_TARGET | AOE | NEEDS_VALID_TERRAIN"
 
 
     "AnimationID"               "SpecialAttack"
     "CastFXId"                  "MagicBoltCastFXMega"
-    "Icon"                      "BlessingOfBattle"
+    "Icon"                      "WarDrums"
     
     "AbilityAOEKind"            "RANGE_CIRCLE"
     "AbilityAOECenterOnCaster"  "0"
@@ -34,7 +34,7 @@
         "03"
         {
             "var_type"      "FIELD_FLOAT"
-            "duration"      "2"
+            "duration"      "1"
         }
     }
 
@@ -58,7 +58,7 @@
             {
                 "ApplyModifier"
                 {
-                    "ModifierName"      "modifier_cleric_vow_of_peace"
+                    "ModifierName"      "modifier_cleric_salvation"
                     "Target"            "%newTarget"
                     "Duration"          "%duration"
                 }
@@ -74,7 +74,7 @@
 
     "Modifiers"
     {
-        "modifier_cleric_vow_of_peace"
+        "modifier_cleric_salvation"
         {
             "Icon"              "ParryStance"
             "IconPriority"      "50"
