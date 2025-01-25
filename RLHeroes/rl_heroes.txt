@@ -2538,7 +2538,7 @@
 
 			"level" 				"1"
 							
-			"health_max" 			"4"
+			"health_max" 			"5"
 			"armor_max" 			"4"
 			"armor_regen_per_turn" 	"0"
 			"baseDamage"  			"4"
