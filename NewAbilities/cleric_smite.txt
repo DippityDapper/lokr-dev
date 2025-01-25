@@ -4,7 +4,7 @@
     "AbilityTeamFilter"             "TEAM_ENEMY"
     "AbilityCastRange"              "stat(%CASTER, #rangedAttackRange)"
     "AbilityCooldown"               "4"
-    "AbilityAPCost"                 "1"
+    "AbilityAPCost"                 "2"
 
     "AnimationID"                   "SpellCastB"
     "CastFXId"                      "GenericHolyCastFXMega"
@@ -20,8 +20,8 @@
 
         "02"
         {
-            "var_type"              "FIELD_FLOAT"        
-            "damage"          		"3"
+            "var_type"              "FIELD_EXPRESSION"        
+            "damage"          		"floor(stat(%CASTER, #attackDamage)/2)"
         }
 
         "03"
@@ -42,32 +42,6 @@
 			
 		"Delay"
 		{
-				"Time"				"0.8"
-				
-				"Actions"
-				{
-					"Hit"
-					{
-					
-					"Target"        "%TARGET"
-                    "Tags"          "stringList(#PROJECTILE, #TARGETED)"
-                    "EffectName"    "TeslaThunderStrikeHitFXMega"
-
-                    "InitActions"
-                    {
-                        "AddDamage"
-                        {
-                            "Type"          "DAMAGE_MAGICAL"
-                            "Damage"        "2"
-                        }
-                    }
-				}
-			}
-			
-		}
-		
-        "Delay"
-        {
             "Time"                  "0.8"
 
             "Actions"
@@ -83,15 +57,15 @@
                     {
                         "AddDamage"
                         {
-                            "Type"          "DAMAGE_MAGICAL"
-                            "Damage"        "2"
+                            "Type"          "DAMAGE_TRUE"
+                            "Damage"        "expr(%damage)"
                         }
                     }
                 }
 
                 "Delay"
                 {
-                    "Time"                  "0.5"
+                    "Time"                  "0.6"
 
                     "Actions"
                     {
@@ -120,8 +94,8 @@
                                     {
                                         "AddDamage"
                                         {
-                                            "Type"          "DAMAGE_MAGICAL"
-                                            "Damage"        "2"
+                                            "Type"          "DAMAGE_TRUE"
+                                            "Damage"        "expr(%damage)"
                                         }
                                     }
                                 }
