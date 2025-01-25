@@ -12,8 +12,8 @@
     "AbilityAOEAffectsCaster"   "1"
 
     "AnimationID"               "SpellCastA"
-    "CastFXId"                  "MartyrsInspirationCastFXMega"
-    "Icon"                      "MartyrsInspiration"
+    "CastFXId"                  "KnightHoldTheLineCastFXMega"
+    "Icon"                      "AjaxsBlessing"
 
 
      "AbilitySpecial"

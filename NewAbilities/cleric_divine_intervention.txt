@@ -5,7 +5,7 @@
 
     "AnimationID"               "SpellCastB"
     "CastFXId"                  "HealingCastFXMega"
-    "Icon"                      "HealingLight02"
+    "Icon"                      "ShieldWall02"
     
     "AbilityAOEKind"            "RANGE_CIRCLE"
     "AbilityAOECenterOnCaster"  "0"
@@ -101,7 +101,12 @@
 	{
 		"cleric_divine_intervention_modifier"
 		{
-			"OnHitPreProcessDamages"
+			"EffectName"                "GeraldRallyStatusFXMega"
+            "Icon"                      "ShieldOfRetribution"
+            "IconPriority"              "50"
+
+            
+            "OnHitPreProcessDamages"
             {
                 "AddDamage"
                 {

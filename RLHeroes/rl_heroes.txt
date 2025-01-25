@@ -2552,7 +2552,7 @@
 
 		"skills"
 		{
-			"11" 	"cleric_shield_up"
+			"11" 	"cleric_unshakable"
 			"100" 	"magic_endturn_trait"
  		}
 
@@ -2565,7 +2565,7 @@
 
  			"2" 
  			{
- 				"1" "cleric_miracle"
+ 				"1" "cleric_salvation"
  				"2" "cleric_providence"
  			}
 
