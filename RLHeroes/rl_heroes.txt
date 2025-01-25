@@ -2332,13 +2332,16 @@
 
  		"soundConfig"
 		{
-			"assetId" "DynamicSoundGroupCultistPriestSounds"
+			"assetId" "DynamicSoundGroupGeraldSounds"
 			"sounds"
 			{
-				"receiveDamage" "krl_va_combatCultistPriest_hit"
-				"receiveArmorDamage" "krl_sfx_combatGeneric_armorHit"
-				"death" "krl_va_combatCultistPriest_death"
-				"walk" ""
+				"receiveDamage" 		"krl_va_combatGerald_hit"
+				"receiveArmorDamage" 	"krl_sfx_combatGeneric_armorHit"
+				"death" 				"krl_va_combatGerald_death"
+				"useSkill" 				"krl_va_combatGerald_action"
+				"startTurn" 			"krl_va_combatGerald_turnStart"
+				"promote" 				"krl_va_combatGerald_promote"
+				"selectHero" 			"krl_va_combatGerald_select"
 			}
 		}
 	}
@@ -2458,9 +2461,13 @@
 			"assetId" "DynamicSoundGroupSilveroakEnchantressSounds"
 			"sounds"
 			{  
-				"receiveDamage" "krl_va_combatEnchantress_hit"
-				"receiveArmorDamage" "krl_sfx_combatGeneric_armorHit"
-				"death" "krl_va_combatEnchantress_death"
+				"receiveDamage" 		"krl_va_combatEnchantress_hit"
+				"receiveArmorDamage" 	"krl_sfx_combatGeneric_armorHit"
+				"death" 				"krl_va_combatEnchantress_death"
+				"useSkill" 				"krl_va_combatGerald_action"
+				"startTurn" 			"krl_va_combatGerald_turnStart"
+				"promote" 				"krl_va_combatGerald_promote"
+				"selectHero" 			"krl_va_combatGerald_select"
 			}
 		}
 	}
@@ -2573,11 +2580,16 @@
 
  		"soundConfig"
 		{
+			"assetId" "DynamicSoundGroupGeraldSounds"
 			"sounds"
 			{
-				"receiveDamage" "krl_sfx_combatGeneric_humanMaleHit"
-				"receiveArmorDamage" "krl_sfx_combatGeneric_armorHit"
-				"death" "krl_sfx_combatGeneric_humanMaleDeath"
+				"receiveDamage" 		"krl_sfx_combatGeneric_humanMaleHit"
+				"receiveArmorDamage" 	"krl_sfx_combatGeneric_armorHit"
+				"death" 				"krl_sfx_combatGeneric_humanMaleDeath"
+				"useSkill" 				"krl_va_combatGerald_action"
+				"startTurn" 			"krl_va_combatGerald_turnStart"
+				"promote" 				"krl_va_combatGerald_promote"
+				"selectHero" 			"krl_va_combatGerald_select"
 			}
 		}
 	}
@@ -2695,11 +2707,16 @@
 
  		"soundConfig"
 		{
+			"assetId" "DynamicSoundGroupGeraldSounds"
 			"sounds"
 			{
-				"receiveDamage" "krl_sfx_combatGeneric_humanFemaleHit"
-				"receiveArmorDamage" "krl_sfx_combatGeneric_armorHit"
-				"death" "krl_sfx_combatGeneric_humanFemaleDeath"
+				"receiveDamage" 		"krl_sfx_combatGeneric_humanFemaleHit"
+				"receiveArmorDamage" 	"krl_sfx_combatGeneric_armorHit"
+				"death" 				"krl_sfx_combatGeneric_humanFemaleDeath"
+				"useSkill" 				"krl_va_combatGerald_action"
+				"startTurn" 			"krl_va_combatGerald_turnStart"
+				"promote" 				"krl_va_combatGerald_promote"
+				"selectHero" 			"krl_va_combatGerald_select"
 			}
 		}
 	}
