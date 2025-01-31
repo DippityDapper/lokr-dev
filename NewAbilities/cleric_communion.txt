@@ -23,14 +23,26 @@
         
         "02"
         {
-            "var_type"          	"FIELD_FLOAT"
-            "extraDamageSelf"       "1"
+            "var_type"          	"FIELD_EXPRESSION"
+            "extraDamageSelf"       "floor(stat(%TARGET, #level)/2)+1"
         }
 		
 		 "03"
         {
-            "var_type"          	"FIELD_FLOAT"
-            "extraDamageAlly"       "1"
+            "var_type"          	"FIELD_EXPRESSION"
+            "extraDamageAlly"       "ceil(stat(%TARGET, #level)/2)"
+        }
+
+        "04"
+        {
+            "var_type"          	"FIELD_EXPRESSION"
+            "descDamageSelf"        "floor(stat(%CASTER, #level)/2)+1"
+        }
+		
+		 "05"
+        {
+            "var_type"          	"FIELD_EXPRESSION"
+            "descDamageAlly"        "ceil(stat(%CASTER, #level)/2)"
         }
     }
 
@@ -66,7 +78,7 @@
 
             "PropertiesAdd"
             {
-                "extraDamage" "%extraDamageAlly"
+                "extraDamage" "expr(%extraDamageAlly)"
             }
         }
 		
@@ -80,7 +92,7 @@
 
             "PropertiesAdd"
             {
-                "extraDamage" "%extraDamageSelf"
+                "extraDamage" "expr(%extraDamageSelf)"
             }
         }
     }

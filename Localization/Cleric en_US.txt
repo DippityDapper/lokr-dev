@@ -14,7 +14,7 @@
 
 "SKILL_cleric_communion_NAME" = "Communion"
 "SKILL_cleric_communion_DESCRIPTION" = "With a prayer, the Cleric gives a selected ally and himself increased attack."
-"SKILL_cleric_communion_DESCRIPTION_DATA" = "Attack Bonus for Self: <style="buff">+{extraDamageSelf} {icon#damagePhysical}</style>\nAttack Bonus for Ally: <style="buff">+{extraDamageAlly} {icon#damagePhysical}</style>\nDuration: <style="highlight">{duration}</style> {icon#turns}\nRange: <style="highlight">{AbilityCastRange}</style>"
+"SKILL_cleric_communion_DESCRIPTION_DATA" = "Attack Bonus for Self: <style="buff">+{descDamageSelf} {icon#damagePhysical}</style>\nAttack Bonus for Ally: <style="buff">+{descDamageAlly} {icon#damagePhysical}</style>\nDuration: <style="highlight">{duration}</style> {icon#turns}\nRange: <style="highlight">{AbilityCastRange}</style>"
 "SKILL_cleric_communion_DESCRIPTION_EXTRA" = "<style="extra">The Cleric must buff an ally in order to gain the effect.</style>"
 
 "SKILL_cleric_salvation_NAME" = "Salvation"
