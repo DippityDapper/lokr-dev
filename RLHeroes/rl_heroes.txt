@@ -2606,7 +2606,7 @@
 			"level" 				"2"
 							
 			"health_max" 			"6"
-			"armor_max" 			"4"
+			"armor_max" 			"5"
 			"armor_regen_per_turn" 	"0"
 			"baseDamage"  			"4"
 			"holyPoints"			"0"
@@ -2628,7 +2628,7 @@
 			"level" 				"3"
 							
 			"health_max" 			"8"
-			"armor_max" 			"4"
+			"armor_max" 			"6"
 			"armor_regen_per_turn" 	"0"
 			"baseDamage"  			"5"
 			"holyPoints"			"0"
