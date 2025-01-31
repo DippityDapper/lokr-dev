@@ -3,7 +3,7 @@
     "AbilityBehavior"           "POINT_TARGET | AOE | POSITIVE_EFFECT"
     "AbilityAOETeamFilter"      "TEAM_FRIENDLY"
 
-    "AnimationID"               "SpellCastA"
+    "AnimationID"               "SpellCastB"
     "CastFXId"                  "HealingCastFXMega"
     "Icon"                      "ShieldWall02"
     

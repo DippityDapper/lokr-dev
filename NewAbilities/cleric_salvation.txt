@@ -65,11 +65,6 @@
             }
         }
         
-        "RemoveModifier"
-        {
-            "ModifierName"  "cleric_holy_points_modifier"
-            "Target"        "%SOURCE"
-        }
     }
 
     "Modifiers"
