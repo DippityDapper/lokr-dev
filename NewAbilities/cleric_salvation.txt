@@ -3,7 +3,7 @@
     "AbilityBehavior"           "POINT_TARGET | AOE | NEEDS_VALID_TERRAIN"
 
 
-    "AnimationID"               "SpecialAttack"
+    "AnimationID"               "SpellCastA"
     "CastFXId"                  "MagicBoltCastFXMega"
     "Icon"                      "WarDrums"
     
