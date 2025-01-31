@@ -2332,13 +2332,16 @@
 
  		"soundConfig"
 		{
-			"assetId" "DynamicSoundGroupCultistPriestSounds"
+			"assetId" "DynamicSoundGroupGeraldSounds"
 			"sounds"
 			{
-				"receiveDamage" "krl_va_combatCultistPriest_hit"
-				"receiveArmorDamage" "krl_sfx_combatGeneric_armorHit"
-				"death" "krl_va_combatCultistPriest_death"
-				"walk" ""
+				"receiveDamage" 		"krl_va_combatGerald_hit"
+				"receiveArmorDamage" 	"krl_sfx_combatGeneric_armorHit"
+				"death" 				"krl_va_combatGerald_death"
+				"useSkill" 				"krl_va_combatGerald_action"
+				"startTurn" 			"krl_va_combatGerald_turnStart"
+				"promote" 				"krl_va_combatGerald_promote"
+				"selectHero" 			"krl_va_combatGerald_select"
 			}
 		}
 	}
@@ -2458,9 +2461,13 @@
 			"assetId" "DynamicSoundGroupSilveroakEnchantressSounds"
 			"sounds"
 			{  
-				"receiveDamage" "krl_va_combatEnchantress_hit"
-				"receiveArmorDamage" "krl_sfx_combatGeneric_armorHit"
-				"death" "krl_va_combatEnchantress_death"
+				"receiveDamage" 		"krl_va_combatEnchantress_hit"
+				"receiveArmorDamage" 	"krl_sfx_combatGeneric_armorHit"
+				"death" 				"krl_va_combatEnchantress_death"
+				"useSkill" 				"krl_va_combatGerald_action"
+				"startTurn" 			"krl_va_combatGerald_turnStart"
+				"promote" 				"krl_va_combatGerald_promote"
+				"selectHero" 			"krl_va_combatGerald_select"
 			}
 		}
 	}
@@ -2518,7 +2525,7 @@
 		"MetaExo" "ExoSkeletonHumanCleric_MetaDataAsset"
 		"Name" "MINION_CLERIC"
 		"InheritsFrom" "Hero"
-		"cinematicTags""Minion|Cleric|Male|ct_minion|ct_human|ct_holy|ct_might|ct_social|ct_wisdom|UPGRADES_magic"
+		"cinematicTags""Minion|Cleric|Male|ct_minion|ct_human|ct_holy|ct_magic|ct_social|ct_wisdom|UPGRADES_magic"
 		"nextLevelArchetype" "MinionClericLvl2"
 		"Icon" "Asst_Banner_Cleric"
 		"Background" "hero_roster_legend_bg_forest"
@@ -2531,10 +2538,10 @@
 
 			"level" 				"1"
 							
-			"health_max" 			"4"
+			"health_max" 			"5"
 			"armor_max" 			"4"
 			"armor_regen_per_turn" 	"0"
-			"baseDamage"  			"4"
+			"baseDamage"  			"3"
 			"holyPoints"			"0"
 			"armor_gain_passTurn" 	"0"
 
@@ -2573,11 +2580,16 @@
 
  		"soundConfig"
 		{
+			"assetId" "DynamicSoundGroupGeraldSounds"
 			"sounds"
 			{
-				"receiveDamage" "krl_sfx_combatGeneric_humanMaleHit"
-				"receiveArmorDamage" "krl_sfx_combatGeneric_armorHit"
-				"death" "krl_sfx_combatGeneric_humanMaleDeath"
+				"receiveDamage" 		"krl_sfx_combatGeneric_humanMaleHit"
+				"receiveArmorDamage" 	"krl_sfx_combatGeneric_armorHit"
+				"death" 				"krl_sfx_combatGeneric_humanMaleDeath"
+				"useSkill" 				"krl_va_combatGerald_action"
+				"startTurn" 			"krl_va_combatGerald_turnStart"
+				"promote" 				"krl_va_combatGerald_promote"
+				"selectHero" 			"krl_va_combatGerald_select"
 			}
 		}
 	}
@@ -2596,7 +2608,7 @@
 			"health_max" 			"6"
 			"armor_max" 			"4"
 			"armor_regen_per_turn" 	"0"
-			"baseDamage"  			"5"
+			"baseDamage"  			"4"
 			"holyPoints"			"0"
 			
 			"rangedAttackRange" 	"3" 
@@ -2618,7 +2630,7 @@
 			"health_max" 			"8"
 			"armor_max" 			"4"
 			"armor_regen_per_turn" 	"0"
-			"baseDamage"  			"6"
+			"baseDamage"  			"5"
 			"holyPoints"			"0"
 			"armor_gain_passTurn" 	"2"
 
@@ -2652,9 +2664,9 @@
 			"armor_max" "0"
 			"armor_regen_per_turn" "2"
 
-			"baseDamage"  "5"
+			"baseDamage"  "4"
 
-			"rangedAttackRange" "3"
+			"rangedAttackRange" "2"
 			"rangedAttackMinRange" "1"
 			"evasion" "0.4"
 			
@@ -2695,11 +2707,16 @@
 
  		"soundConfig"
 		{
+			"assetId" "DynamicSoundGroupGeraldSounds"
 			"sounds"
 			{
-				"receiveDamage" "krl_sfx_combatGeneric_humanFemaleHit"
-				"receiveArmorDamage" "krl_sfx_combatGeneric_armorHit"
-				"death" "krl_sfx_combatGeneric_humanFemaleDeath"
+				"receiveDamage" 		"krl_sfx_combatGeneric_humanFemaleHit"
+				"receiveArmorDamage" 	"krl_sfx_combatGeneric_armorHit"
+				"death" 				"krl_sfx_combatGeneric_humanFemaleDeath"
+				"useSkill" 				"krl_va_combatGerald_action"
+				"startTurn" 			"krl_va_combatGerald_turnStart"
+				"promote" 				"krl_va_combatGerald_promote"
+				"selectHero" 			"krl_va_combatGerald_select"
 			}
 		}
 	}
@@ -2718,7 +2735,7 @@
 			"armor_max" "0"
 			"armor_regen_per_turn" "2"
 
-			"baseDamage"  "6"
+			"baseDamage"  "5"
 			
 			"evasion" "0.4"
 
@@ -2738,7 +2755,7 @@
 			"armor_max" "0"
 			"armor_regen_per_turn" "2"
 
-			"baseDamage"  "7"
+			"baseDamage"  "6"
 			
 			"evasion" "0.4"
 			
@@ -2751,6 +2768,7 @@
 	
 	
 	
+
 
 
 	"MinionBulldog" 

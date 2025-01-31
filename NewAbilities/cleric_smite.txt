@@ -20,8 +20,8 @@
 
         "02"
         {
-            "var_type"              "FIELD_FLOAT"        
-            "damage"          		"3"
+            "var_type"              "FIELD_EXPRESSION"        
+            "damage"          		"floor(stat(%CASTER, #attackDamage)/2)"
         }
 
         "03"
@@ -40,9 +40,8 @@
             "Position"              "unitPosition(%SOURCE)"
         }
 			
-		
-        "Delay"
-        {
+		"Delay"
+		{
             "Time"                  "0.8"
 
             "Actions"
@@ -59,14 +58,14 @@
                         "AddDamage"
                         {
                             "Type"          "DAMAGE_TRUE"
-                            "Damage"        "%damage"
+                            "Damage"        "expr(%damage)"
                         }
                     }
                 }
 
                 "Delay"
                 {
-                    "Time"                  "1.2"
+                    "Time"                  "0.6"
 
                     "Actions"
                     {
@@ -96,7 +95,7 @@
                                         "AddDamage"
                                         {
                                             "Type"          "DAMAGE_TRUE"
-                                            "Damage"        "%damage"
+                                            "Damage"        "expr(%damage)"
                                         }
                                     }
                                 }

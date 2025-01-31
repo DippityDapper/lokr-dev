@@ -88,7 +88,7 @@
 
                         "AttachEffect"
                         {
-                            "EffectName"    "SorceressCorrodingHexGiveArmorFXMega"
+                            "EffectName"    "MartyrsInspirationShieldFXMega"
                             "Target"        "%newTarget"
                         }
                     }
@@ -101,7 +101,12 @@
 	{
 		"cleric_divine_intervention_modifier"
 		{
-			"OnHitPreProcessDamages"
+			"EffectName"                "GeraldRallyStatusFXMega"
+            "Icon"                      "ShieldOfRetribution"
+            "IconPriority"              "50"
+
+            
+            "OnHitPreProcessDamages"
             {
                 "AddDamage"
                 {

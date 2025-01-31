@@ -49,9 +49,6 @@
 			"id" : "Cleric"
 		},
 		{
-			"id" : "Assassin"
-		},
-		{
 			"id" : "FemaleKnight",
 			"unlockAchievement" : "knight_unlock",
 			"locked" : true
