@@ -24,25 +24,13 @@
         "02"
         {
             "var_type"          	"FIELD_EXPRESSION"
-            "extraDamageSelf"       "floor(stat(%TARGET, #level)/2)+1"
+            "DamageSelf"            "floor(stat(%CASTER, #level)/2)+1"
         }
 		
-		 "03"
+		"03"
         {
             "var_type"          	"FIELD_EXPRESSION"
-            "extraDamageAlly"       "ceil(stat(%TARGET, #level)/2)"
-        }
-
-        "04"
-        {
-            "var_type"          	"FIELD_EXPRESSION"
-            "descDamageSelf"        "floor(stat(%CASTER, #level)/2)+1"
-        }
-		
-		 "05"
-        {
-            "var_type"          	"FIELD_EXPRESSION"
-            "descDamageAlly"        "ceil(stat(%CASTER, #level)/2)"
+            "DamageAlly"            "ceil(stat(%CASTER, #level)/2)"
         }
     }
 
@@ -51,16 +39,34 @@
     {
         "ApplyModifier"
         {
-            "ModifierName"  "modifier_communion"
-            "Target"        "%TARGET"
-            "Duration"      "%duration"
+            "ModifierName"      "modifier_communion"
+            "Target"            "%TARGET"
+            "Duration"          "%duration"
+
+            "Params"
+            {
+                "ally_damage" 
+                {
+                    "type"      "FIELD_FLOAT"
+                    "value"     "expr(%DamageAlly)"
+                }
+            }
         }
 
         "ApplyModifier"
         {
-            "ModifierName"  "modifier_communion_self"
-            "Target"        "%CASTER"
-            "Duration"      "%duration"
+            "ModifierName"      "modifier_communion_self"
+            "Target"            "%CASTER"
+            "Duration"          "%duration"
+
+            "Params"
+            {
+                "self_damage" 
+                {
+                    "type"      "FIELD_FLOAT"
+                    "value"     "expr(%DamageSelf)"
+                }
+            }
         }
 
     }
@@ -70,29 +76,29 @@
     {
         "modifier_communion"
         {
-            "EffectName"    "MartyrsInspirationStatusFXMega"
-            "Icon"          "Martyr"
-            "IconPriority"  "50"
+            "EffectName"        "MartyrsInspirationStatusFXMega"
+            "Icon"              "Martyr"
+            "IconPriority"      "50"
 
             
 
             "PropertiesAdd"
             {
-                "extraDamage" "expr(%extraDamageAlly)"
+                "extraDamage"   "%ally_damage"
             }
         }
 		
 		"modifier_communion_self"
         {
-            "EffectName"    "MartyrsInspirationStatusFXMega"
-            "Icon"          "Martyr"
-            "IconPriority"  "50"
+            "EffectName"        "MartyrsInspirationStatusFXMega"
+            "Icon"              "Martyr"
+            "IconPriority"      "50"
 
             
 
             "PropertiesAdd"
             {
-                "extraDamage" "expr(%extraDamageSelf)"
+                "extraDamage"   "%self_damage"
             }
         }
     }
