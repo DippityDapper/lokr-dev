@@ -1,41 +1,67 @@
 
 
+
+
 do 
 	local quest = helper.QuestDefinition();
-	quest.id = 'SilveroakTavern'
+	quest.id = 'TavernNew'
 	quest.visual = "Tavern"
 	quest.kindFlag = "Recruit"
 	quest.startRevealed = true
-	quest.tags = {"RECRUIT","NARRATIVE","FIXED","TERRAIN_SILVEROAK"}
+	quest.tags = {"RECRUIT","NARRATIVE","FIXED","EASY","TERRAIN_PLAINS"}
 	quest.encounters = {}
 
 
 		local theDialog =  dialogs.CreateDialog("intro",  
 						    {
+						        
+								
+								
+								
+                                
+						    	
+						    	
+								
+						    	
+						    	
+						    	
+						    	
+								
+								
+								
+								
+								
+								
+						        
+								
 						        {
 						            type = DialogType.Dialog,
 						            id = "start",
-						            narrator = || __N(1, "The Sylvan Elf Hall"),
-						    		condition = || (cinematicMapHelper.HeroByTag("VeznanFaction") == nil),
-						            text = || __D(2, "A heavily protected Sylvan elf hall by the road is bustling with warriors training and sparring, and it has a tavern of sorts.\n\nHere we can safely rest for a while."),
+						            narrator = || __N(1, "The Prancing Tony"),
+						            text = || __D(2, "The tavern is busy, as always. A place for locals to forget the hardships of life and enjoy some time together.##The bartender looks at us and asks: \"How can I help ya, fellas?\""),
 						    		icon = || "Asst_TavernNew",
+						    		condition = || (cinematicMapHelper.CurrentQuestStatus().context.GetObject("option") != "enter") and (cinematicMapHelper.Guild().context.GetInt("linked.hasMerchant") == 0),
 						    		who = || "mapCinematicId",
 						            children = {
 						            	{
 		                                    type = DialogType.Custom,
 		                                    subtype = "loot",
-		                                    amount = || 50,
+		                                    amount = || 30,
 		                                    text = || __R(3, "Rest."),
 		                                    children = {
 												{
 													type = DialogType.Dialog,
-			                                    	text = || __D(4, "We paid the fee and took some time to rest in comfortable beds and have a taste of the wonderful elven cuisine."),
+			                                    	text = || __D(4, "A decent meal and a warm bed was just what we needed!##We recovered some health."),
 										    		who = || "mapCinematicId",
 										    		children = {
 														{
 										    				type = DialogType.Custom,
 										    				subtype = "rewards",
 										    				rewards = || quest.results.Rest,
+										    				onChoose = function(d,n)
+												            	cinematicMapHelper.Guild().context.SetInt("linked.villagerMorality", (cinematicMapHelper.Guild().context.GetInt("linked.villagerMorality") +1))
+												            	print (cinematicMapHelper.Guild().context.GetInt("linked.villagerMorality"))
+												            end,
 										    				rewardsParams = || {},
 												    		jumpTo = "return"
 														}
@@ -426,18 +452,18 @@ do
 														},
 														{
 															type = DialogType.Response,
-															text = || __R(70, "Talk to the sylvan elf."),
+															text = || __R(51, "Talk to the sylvan elf."),
 															condition = |d| cinematicMapHelper.InList(d.data.options, "sylvanElf"),
 												    		who = || "mapCinematicId",
 												    		children ={
 												    			{
 																	type = DialogType.Dialog,
-																	text = || __D(71, "\"You fellows look like you need a fighter with my expertise. You are lucky; I am available,\"\n\nthe elf said, showing us his spear."),
+																	text = || __D(52, "\"You fellows look like you need a fighter with my expertise. You are lucky; I am available,\"\n\nthe elf said, showing us his spear."),
 														    		who = || "mapCinematicId",
 														    		children = {
 														    			{
 																			type = DialogType.Response,
-																			text = || __R(72, "Recruit him."),
+																			text = || __R(53, "Recruit him."),
 																			
 																			onChoose = function(d,n)
 																            	cinematicMapHelper.CurrentQuestStatus().context.SetObject("option", "recruitSylvanElf")
@@ -446,7 +472,7 @@ do
 																		},
 																		{
 																			type = DialogType.Response,
-																			text = || __R(73, "Look for other recruits."),
+																			text = || __R(54, "Look for other recruits."),
 																			jumpTo = "recruits"
 																		}
 														    		}
@@ -455,18 +481,18 @@ do
 														},
 														{
 															type = DialogType.Response,
-															text = || __R(68, "Talk to the high enchantress."),
+															text = || __R(55, "Talk to the high enchantress."),
 															condition = |d| cinematicMapHelper.InList(d.data.options, "Enchantress"),
 												    		who = || "mapCinematicId",
 												    		children ={
 												    			{
 																	type = DialogType.Dialog,
-																	text = || __D(69, "\"I may not be the elf you're expecting,\"the enchantress said with a wicked smile.\n\n "but I will gladly join your quest./""),
+																	text = || __D(56, "\"I may not be the elf you're expecting, but I'll gladly join your quest.\"\n\nthe enchantress said with a wicked smile."),
 														    		who = || "mapCinematicId",
 														    		children = {
 														    			{
 																			type = DialogType.Response,
-																			text = || __R(70, "Recruit her."),
+																			text = || __R(57, "Recruit her."),
 																			
 																			onChoose = function(d,n)
 																            	cinematicMapHelper.CurrentQuestStatus().context.SetObject("option", "recruitEnchantress")
@@ -475,7 +501,7 @@ do
 																		},
 																		{
 																			type = DialogType.Response,
-																			text = || __R(71, "Look for other recruits."),
+																			text = || __R(58, "Look for other recruits."),
 																			jumpTo = "recruits"
 																		}
 														    		}
@@ -484,18 +510,18 @@ do
 														},
 														{
 															type = DialogType.Response,
-															text = || __R(68, "Talk to the Necromancer."),
+															text = || __R(59, "Talk to the Necromancer."),
 															condition = |d| cinematicMapHelper.InList(d.data.options, "Necromancer"),
 												    		who = || "mapCinematicId",
 												    		children ={
 												    			{
 																	type = DialogType.Dialog,
-																	text = || __D(69, "\"I'd be delighted to make more corpses for my army. I shall revel in this chaos,\"\n\n the necromancer said, sending a chill down our spines."),
+																	text = || __D(60, "\"I'd be delighted to make more corpses for my army. I shall revel in this chaos,\"\n\n the necromancer said, sending a chill down our spines."),
 														    		who = || "mapCinematicId",
 														    		children = {
 														    			{
 																			type = DialogType.Response,
-																			text = || __R(70, "Recruit them."),
+																			text = || __R(61, "Recruit them."),
 																			
 																			onChoose = function(d,n)
 																            	cinematicMapHelper.CurrentQuestStatus().context.SetObject("option", "recruitNecromancer")
@@ -504,7 +530,7 @@ do
 																		},
 																		{
 																			type = DialogType.Response,
-																			text = || __R(71, "Look for other recruits."),
+																			text = || __R(62, "Look for other recruits."),
 																			jumpTo = "recruits"
 																		}
 														    		}
@@ -513,18 +539,18 @@ do
 														},
 														{
 															type = DialogType.Response,
-															text = || __R(68, "Talk to the Cleric."),
+															text = || __R(63, "Talk to the Cleric."),
 															condition = |d| cinematicMapHelper.InList(d.data.options, "Cleric"),
 												    		who = || "mapCinematicId",
 												    		children ={
 												    			{
 																	type = DialogType.Dialog,
-																	text = || __D(69, "\"Any quest for the world is a quest for me!\"\n\n the cleric said, hefting his mace."),
+																	text = || __D(64, "\"Any quest for the world is a quest for me!\" the cleric said, hefting his mace.\n\n\"The road may be long, but I have faith on my side.\""),
 														    		who = || "mapCinematicId",
 														    		children = {
 														    			{
 																			type = DialogType.Response,
-																			text = || __R(70, "Recruit him."),
+																			text = || __R(65, "Recruit him."),
 																			
 																			onChoose = function(d,n)
 																            	cinematicMapHelper.CurrentQuestStatus().context.SetObject("option", "recruitCleric")
@@ -533,7 +559,7 @@ do
 																		},
 																		{
 																			type = DialogType.Response,
-																			text = || __R(71, "Look for other recruits."),
+																			text = || __R(66, "Look for other recruits."),
 																			jumpTo = "recruits"
 																		}
 														    		}
@@ -542,249 +568,294 @@ do
 														},
 														{
 															type = DialogType.Response,
-															text = || __R(51, "Not right now."),
+															text = || __R(66, "Not right now."),
 												    		jumpTo = "return"
 														}
 										        	}
 												}
 									        }
 		                                },
-		                                {
-						    				type = DialogType.Custom,
-						    				condition = || cinematicMapHelper.CurrentQuestStatus().context.GetInt("archeryContest") != 1,
-						    				subtype = "diceChallenge",
-						    				text = || __R(52, "Archery contest!"),
-						    				challenge = {
-						    					requirements =  |t| t("ct_ranged")
-						    					},
-						    				children = {
-												{
-										            type = DialogType.Dialog,
-										            condition = |d| d.challenge.result == "success",
-										            onEnter = function (d,n)
-													    	d.data.hero = d.challenge.heroesSuccess[0]
-													end,
-										            text = || __D(53, "Feeling confident, we challenged the elven archers to an accuracy contest on the shooting range.\n\nWe surprised our rivals with a perfect score and they, far from being disheartened, paid up in coin and a round of drinks."),
-										            who = || "mapCinematicId",
-										            children = {
-												        {
-										    				type = DialogType.Custom,
-										    				subtype = "rewards",
-										    				rewards = || quest.results.rangedSuccess,
-										    				rewardsParams = |d| {hero = d.data.hero, hard= cinematicMapHelper.CurrentNode().tags.Contains("hard"), normal= cinematicMapHelper.CurrentNode().tags.Contains("normal")},
-															onChoose = || cinematicMapHelper.CurrentQuestStatus().context.SetInt("archeryContest", 1),
-															jumpTo = "return"
-														}
-												    }
-										        },
-										        {
-										            type = DialogType.Dialog,
-										            condition = |d| d.challenge.result == "failure",
-										            onEnter = function (d,n)
-													    	d.data.hero = d.challenge.heroesFailure[0]
-													end,
-										            text = || __D(54, "Feeling confident, we challenged the elven archers practicing on the shooting range to an accuracy contest.\n\nWe tried our best, but the elves were certainly better than us and we quickly fell behind. We paid the agreed amount and left, silent and ashamed."),
-										            who = || "mapCinematicId",
-										            children = {
-												        {
-										    				type = DialogType.Custom,
-										    				subtype = "rewards",
-										    				rewards = || quest.results.rangedFailure,
-										    				rewardsParams = |d| {hero = d.data.hero},
-										    				onChoose = || cinematicMapHelper.CurrentQuestStatus().context.SetInt("archeryContest", 1),
-												    		jumpTo = "return"
-														}
-												    }
-										        }
-						    				}
-							    		},
-
+		                                
 		                                {
 		                                    type = DialogType.Response,
-		                                    text = || __R(55, "Leave."),
+		                                    text = || __R(67, "Talk to the patrons."),
+										    children = {
+												{
+													type = DialogType.Dialog,
+													condition = |d| cinematicMapHelper.RandomChance(0.3) and not dialogs.HasFlag(d, "gotRumor3"),
+													text = || __D(68, "After talking to one of the patrons for a while, he said:##\"I used to be an adventurer like you ...##but then I took an arrow to the knee.\""),
+										    		who = || "mapCinematicId",
+										    		onChoose = function(d)
+									    				dialogs.SetFlag(d, "gotRumor3");
+									    			end,
+										    		jumpTo = "return"
+												},
+												
+												
+												
+												
+										  
+										  
+									   
+									   
+										  
+												
+												
+												
+												
+												
+										  
+										  
+									   
+									   
+										  
+												
+												{
+													type = DialogType.Dialog,
+													condition = |d| cinematicMapHelper.RandomChance(0.3) and not dialogs.HasFlag(d, "gotRumor7"),
+													text = || __D(69, "After talking to one of the patrons for a while, he said:##\"If you want to survive as an adventuring party, it's key to have a diverse set of skills.##Oh! I miss adventuring so!\""),
+										    		who = || "mapCinematicId",
+										    		onChoose = function(d)
+									    				dialogs.SetFlag(d, "gotRumor7");
+									    			end,
+										    		jumpTo = "return"
+												},
+												{
+													type = DialogType.Dialog,
+													condition = |d| cinematicMapHelper.RandomChance(0.3) and not dialogs.HasFlag(d, "gotRumor8"),
+													text = || __D(70, "After talking to one of the patrons for a while, he said:##\"I heard there are some adventurers like you scattered round these parts....##Maybe you can convince them to join your party.\""),
+										    		who = || "mapCinematicId",
+										    		onChoose = function(d)
+									    				dialogs.SetFlag(d, "gotRumor8");
+									    			end,
+										    		jumpTo = "return"
+												},
+												{
+													type = DialogType.Dialog,
+													condition = |d| cinematicMapHelper.RandomChance(0.3) and not dialogs.HasFlag(d, "gotRumor9"),
+													text = || __D(71, "After talking to one of the patrons for a while, he said:##\"Oh yes! Choosing what gear to carry on an adventure can be a daunting task, but having some tools on you can be a life saver.\""),
+										    		who = || "mapCinematicId",
+										    		onChoose = function(d)
+									    				dialogs.SetFlag(d, "gotRumor9");
+									    			end,
+										    		jumpTo = "return"
+												},
+												
+												
+												
+												
+										  
+										  
+									   
+									   
+										  
+												
+												{
+													type = DialogType.Dialog,
+													condition = |d| cinematicMapHelper.RandomChance(0.3) and not dialogs.HasFlag(d, "gotRumor11"),
+													text = || __D(72, "After talking to one of the patrons for a while, he said:##\"Yeah, I did one of those tarot readings once.##I ended up finding some treasure on the way home, but my buddy said he got cursed because of it.\""),
+										    		who = || "mapCinematicId",
+										    		onChoose = function(d)
+									    				dialogs.SetFlag(d, "gotRumor11");
+									    			end,
+										    		jumpTo = "return"
+												},
+												{
+													type = DialogType.Dialog,
+													condition = |d| cinematicMapHelper.RandomChance(0.3) and not dialogs.HasFlag(d, "gotRumor12"),
+													text = || __D(73, "After talking to one of the patrons for a while, he said:##\"A companion is never gonna give you up.##Never gonna let you down.##Never gonna run around and desert you.\""),
+										    		who = || "mapCinematicId",
+										    		onChoose = function(d)
+									    				dialogs.SetFlag(d, "gotRumor12");
+									    			end,
+										    		jumpTo = "return"
+												},
+												{
+													type = DialogType.Dialog,
+													condition = |d| cinematicMapHelper.RandomChance(0.3) and not dialogs.HasFlag(d, "gotRumor13"),
+													text = || __D(74, "After talking to one of the patrons for a while, he said:##\"Fortune is a cruel maiden ...##but she does favor the blessed.\""),
+										    		who = || "mapCinematicId",
+										    		onChoose = function(d)
+									    				dialogs.SetFlag(d, "gotRumor13");
+									    			end,
+										    		jumpTo = "return"
+												},
+												{
+													type = DialogType.Dialog,
+													condition = |d| cinematicMapHelper.RandomChance(0.3) and not dialogs.HasFlag(d, "gotRumor14"),
+													text = || __D(75, "After talking to one of the patrons for a while, he said:##\"I got 99 problems ...##but a drink ain't one.\""),
+										    		who = || "mapCinematicId",
+										    		onChoose = function(d)
+									    				dialogs.SetFlag(d, "gotRumor14");
+									    			end,
+										    		jumpTo = "return"
+												},
+												
+												
+												
+												
+										  
+										  
+									   
+									   
+										  
+												
+												{
+													type = DialogType.Dialog,
+													condition = |d| cinematicMapHelper.RandomChance(0.3) and not dialogs.HasFlag(d, "gotRumor16"),
+													text = || __D(76, "After talking to one of the patrons for a while, he said:##\"Last Easter, I found an egg.##I cracked it open and it was empty.##Just a joke ... I guess.\""),
+										    		who = || "mapCinematicId",
+										    		onChoose = function(d)
+									    				dialogs.SetFlag(d, "gotRumor16");
+									    			end,
+										    		jumpTo = "return"
+												},
+												{
+													type = DialogType.Dialog,
+													condition = |d| cinematicMapHelper.RandomChance(0.3) and not dialogs.HasFlag(d, "gotRumor17"),
+													text = || __D(77, "After talking to one of the patrons for a while, he said:##\"Your mother was a hamster, and your father smelt of elderberries!\""),
+										    		who = || "mapCinematicId",
+										    		onChoose = function(d)
+									    				dialogs.SetFlag(d, "gotRumor17");
+									    			end,
+										    		jumpTo = "return"
+												},
+												{
+													type = DialogType.Dialog,
+													condition = |d| cinematicMapHelper.RandomChance(0.3) and not dialogs.HasFlag(d, "gotRumor19"),
+													text = || __D(78, "After talking to one of the patrons for a while, he said:##\"Does your party have a name?##Mine was called John and the Fab 7.##Funny thing is, there was no John and we were only 4.\""),
+										    		who = || "mapCinematicId",
+										    		onChoose = function(d)
+									    				dialogs.SetFlag(d, "gotRumor19");
+									    			end,
+										    		jumpTo = "return"
+												},
+												{
+													type = DialogType.Dialog,
+													text = || __D(79, "After talking to one of the patrons for a while, he said:##\"Hmm ... let me think ... ask me again later.\""),
+										    		who = || "mapCinematicId",
+										    		jumpTo = "return"
+												}
+									        }
+		                                },
+		                                
+		                                
+		                                
+		                                
+										
+										
+										
+										
+										
+										
+										
+										
+										
+						                
+						                
+										
+										
+										
+							            
+										
+										
+										
+										
+										
+										
+										
+										
+						                
+						                
+						                
+						                
+						                
+										
+										
+										
+						                
+						                
+										
+										
+										
+										
+										
+										
+										
+										
+										
+						                
+						                
+										
+										
+										
+							            
+										
+										
+										
+										
+										
+										
+										
+										
+						                
+						                
+						                
+						                
+						                
+										
+										
+										
+						                
+						                
+										
+										
+										
+										
+										
+										
+									    
+									    
+										
+										
+									    
+		                                
+						            	
+		                                
+		                                
+		                                
+		                                
+		                                
+		                                {
+		                                    type = DialogType.Response,
+		                                    text = || __R(80, "Leave."),
 		                                    onChoose = || cinematicMapHelper.CurrentQuestStatus().context.SetObject("option", "leave"),
 		                                    exit = true
 		                                },
 						        	}
 						        },
-						        
-						        {
-						            type = DialogType.Dialog,
-						            id = "darkStart",
-						            narrator = || __N(56, "The Sylvan Elf Hall"),
-						    		condition = || (cinematicMapHelper.HeroByTag("VeznanFaction") != nil) and cinematicMapHelper.CurrentQuestStatus().context.GetInt("darkConvinced") != 1,
-						            text = || __D(57, "We are approaching an elvish tavern when armed guards surround us before we can put a foot inside the building.||\"You must be really naive to think we'll let the likes of you enter this place. Away with you! Or face your punishment right here, right now,\" says their captain."),
-						    		icon = || "Asst_TavernNew",
-						    		who = || "mapCinematicId",
-						            children = {
-						            	{
-						    				type = DialogType.Custom,
-						    				
-						    				subtype = "diceChallenge",
-						    				text = || __R(58, "Persuade them."),
-						    				challenge = {
-						    					requirements =  |t| t("ct_social")
-						    					},
-						    				children = {
-												{
-										            type = DialogType.Dialog,
-										            condition = |d| d.challenge.result == "success",
-										            onEnter = function (d,n)
-													    	d.data.hero = d.challenge.heroesSuccess[0]
-													end,
-										            text = || __D(59, "It took some smart talk to convince the guards to let us enter, but in the end they saw that our mission to save the forest would benefit their people as well, so they put their weapons down."),
-										            who = || "mapCinematicId",
-										            children = {
-												        {
-										    				type = DialogType.Custom,
-										    				subtype = "rewards",
-										    				rewards = || quest.results.socialSuccess,
-										    				rewardsParams = |d| {hero = d.data.hero, hard= cinematicMapHelper.CurrentNode().tags.Contains("hard"), normal= cinematicMapHelper.CurrentNode().tags.Contains("normal")},
-															onChoose = || cinematicMapHelper.CurrentQuestStatus().context.SetInt("darkConvinced", 1),
-															jumpTo = "darkPassed"
-														}
-													}
-											    },
-										        
-										        {
-										            type = DialogType.Dialog,
-										            condition = |d| d.challenge.result == "failure",
-										            onEnter = function (d,n)
-													    	d.data.hero = d.challenge.heroesFailure[0]
-													end,
-										            text = || __D(60, "Our arguments weren't convincing enough, and the guards remained adamant on their position.\n\nTired and outnumbered, we decided to desist and find another place to rest."),
-										            who = || "mapCinematicId",
-										            children = {
-												        {
-										    				type = DialogType.Custom,
-										    				subtype = "rewards",
-										    				rewards = || quest.results.socialFailure,
-										    				rewardsParams = |d| {hero = d.data.hero},
-										    				onChoose = || cinematicMapHelper.CurrentQuestStatus().context.SetInt("darkFailed", 1),
-										    				onChoose = || cinematicMapHelper.CurrentQuestStatus().context.SetObject("option", "leave"),
-												    		exit = true 
-														}
-												    }
-										        }
-						    				}
-						            	},
-						            	{
-						    				type = DialogType.Custom,
-						    				subtype = "diceChallenge",
-						    				text = || __R(61, "Intimidate them."),
-						    				challenge = {
-						    					requirements =  |t| t("VeznanFaction") and t("ct_legend")
-						    					},
-						    				children = {
-												{
-										            type = DialogType.Dialog,
-										            condition = |d| d.challenge.result == "success",
-										            onEnter = function (d,n)
-													    	d.data.hero = d.challenge.heroesSuccess[0]
-													end,
-										            text = || __D(62, "We reminded them who's still in charge in Linirea, and that if they didn't want to suffer the fury of Vez'nan himself once again, they should really consider getting out of our way.\n\nGroaning, and with their eyes filled with hatred, they let us through."),
-										            who = || "mapCinematicId",
-										            children = {
-												        {
-										    				type = DialogType.Custom,
-										    				subtype = "rewards",
-										    				rewards = || quest.results.dLegendSuccess,
-										    				rewardsParams = |d| {hard= cinematicMapHelper.CurrentNode().tags.Contains("hard"), normal= cinematicMapHelper.CurrentNode().tags.Contains("normal")},
-												    		onChoose = || cinematicMapHelper.CurrentQuestStatus().context.SetInt("darkConvinced", 1),
-												    		jumpTo = "darkPassed"
-														}
-												    }
-										        },
-										        {
-										            type = DialogType.Dialog,
-										            condition = |d| d.challenge.result == "failure",
-										            onEnter = function (d,n)
-													    	d.data.hero = d.challenge.heroesFailure[0]
-													end,
-										            text = || __D(63, "We told them to move or face the Dark Army's might, hoping to instill fear in their minds, but our words fueled their anger even more instead.\n\nA skirmish started almost immediately, forcing us to flee for our lives."), 
-										            who = || "mapCinematicId",
-										            children = {
-												        {
-										    				type = DialogType.Custom,
-										    				subtype = "rewards",
-										    				rewards = || quest.results.dLegendFailure,
-										    				rewardsParams = |d| {hero = d.data.hero, hard= cinematicMapHelper.CurrentNode().tags.Contains("hard"), normal= cinematicMapHelper.CurrentNode().tags.Contains("normal")},
-										    				
-										    				onChoose = || cinematicMapHelper.CurrentQuestStatus().context.SetObject("option", "leave"),
-												    		exit = true
-														}
-												    }
-										        }
-						    				}
-							    		},
-						            	{
-		                                    type = DialogType.Response,
-		                                    text = || __R(64, "Just leave."),
-		                                    who = || "mapCinematicId",
-										   	children = {
-												{
-													type = DialogType.Dialog,
-			                                    	text = || __D(65, "Seeing ourselves outnumbered by angry warriors, we decided to leave and find another place to rest."),
-										    		who = || "mapCinematicId",
-										    		onChoose = || cinematicMapHelper.CurrentQuestStatus().context.SetObject("option", "leave"),
-										    		exit = true
-												}
-									        }
-		                                }
 
-						            }
-						        },
-						        {
-						            type = DialogType.Dialog,
-						            id = "darkPassed",
-						            condition = || (cinematicMapHelper.HeroByTag("VeznanFaction") != nil) and cinematicMapHelper.CurrentQuestStatus().context.GetInt("darkConvinced") == 1,
-						            narrator = || __N(66, "The Sylvan Elf Hall"),
-						            text = || __D(67, "\"Do whatever you need to do, and carry on with your mission. Allies of the Dark Army aren't welcome here,\" the captain says with a fierce look in his eyes."), 
-						    		icon = || "Asst_TavernNew",
-						    		who = || "mapCinematicId",
-						    		inheritFrom = "start"
-						    	},
 						        {
 						            type = DialogType.Dialog,
 						            id = "return",
-						            
-						            narrator = || __N(68, "The Sylvan Elf Hall"),
-						            text = || __D(69, "\"I'm glad you're enjoying your stay, but the forest is getting worse by the minute, so if you could get back to it, that'd be great...,\"\n\nthe captain says with an acerbic tone."),
+						            narrator = || __N(81, "The Prancing Tony"),
+						            text = || __D(82, "\"It sure is nice to get a chance to lay back and rest from adventuring, am I right, fellas?\"\n\nthe bartender says with a welcoming smile."),
 						    		icon = || "Asst_TavernNew",
 						    		who = || "mapCinematicId",
 						    		inheritFrom = "start"
 						    	}
-					    })
+						    })
 
 	quest.results = {
 		Rest = cinematicMapHelper.Result(|params| {
-			{type="guild.attribute", kind = "loot", amount = -50 },
+			{type="guild.attribute", kind = "loot", amount = -30 },
 			{type="applyModifier", category="energyMod", level = 1, duration = config.rewards.buffDuration.energy(), targets = cinematicMapHelper.PartyRandom(1)},
+			
 			{type="doHeal", amount = 3, targets = cinematicMapHelper.Party()},
 			}),
-		rangedSuccess = cinematicMapHelper.Result(|params| {
-			{type="guild.attribute", kind = "loot", amount = 25 },
-			{type="applyModifier", category="energyMod", level = 1, duration = config.rewards.buffDuration.energy(), targets = {params.hero}},
+		Rumors = cinematicMapHelper.Result(|params| {
+			{type="guild.attribute", kind = "loot", amount = -20 },
 			}),
-		rangedFailure = cinematicMapHelper.Result(|params| {
-			{type="guild.attribute", kind = "loot", amount = -25 },
-			{type="applyModifier", category="luckMod", level = -1, duration = config.rewards.buffDuration.energy(), targets = {params.hero}},
-			}),
-
-		socialSuccess = cinematicMapHelper.Result(|params| {
-			{type="giveXP", amount = params.hard and config.rewards.starXp.eHigh() or (params.normal and config.rewards.starXp.eMid() or (config.rewards.starXp.eLow()))},
-			}),
-		socialFailure = cinematicMapHelper.Result(|params| {
-			{type="applyModifier", category="energyMod", level = -1, duration = config.rewards.buffDuration.energy(), targets = cinematicMapHelper.PartyRandom(1)},
-			}),
-		dLegendSuccess = cinematicMapHelper.Result(|params| {
-			{type="giveXP", amount = params.hard and config.rewards.starXp.eHigh() or (params.normal and config.rewards.starXp.eMid() or (config.rewards.starXp.eLow()))},
-			}),
-		dLegendFailure = cinematicMapHelper.Result(|params| {
-			{type="doDamage", amount = 1, targets =  cinematicMapHelper.Party()},
-			{type="applyModifier", category="energyMod", level = -1, duration = config.rewards.buffDuration.energy(), targets = cinematicMapHelper.PartyRandom(1)},
-			}),
-
 		recruitKnight = cinematicMapHelper.Result(|params| {
 			{type="guild.attribute", kind = "loot", amount = -50 },
 			}),

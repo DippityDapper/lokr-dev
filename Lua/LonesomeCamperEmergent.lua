@@ -22,6 +22,7 @@ do
 		                                    onEnter = function (d,n)
 		                                    	local heroesAvailable = {}
 
+		                                    	
 		                                    	if( cinematicMapHelper.HeroByTag("Knight") == nil ) then
 			                                    	table.insert(heroesAvailable, "knight")
 			                               		end
@@ -389,17 +390,17 @@ do
 										        {
 										            type = DialogType.Dialog,
 										            condition = |d| d.data.recruit == "enchantress",
-										            text = || __D(48, "We saw an ashervan enchantress invoking her magic into a sapling.\n\n\"If nature beckons me forward, then I must heed its call to battle.\""),
+										            text = || __D(52, "We saw an ashervan enchantress invoking her magic into a sapling.\n\n\"If nature beckons me forward, then I must heed its call to battle.\""),
 										    		who = || "mapCinematicId",
 										            children = {
 										    			{
 															type = DialogType.Response,
-															text = || __R(49, "Ask her to join you."),
+															text = || __R(53, "Ask her to join you."),
 															onChoose = || cinematicMapHelper.CurrentQuestStatus().context.SetObject("option", "recruitEnchantress"),
 															children = {
 																{
 																	type = DialogType.Dialog,
-							                                    	text = || __D(50, "The sapling withered into a pile of dust.\n\n\"Let us quell this dark margic from the realm!\""),
+							                                    	text = || __D(54, "The sapling withered into a pile of dust.\n\n\"Let us quell this dark margic from the realm!\""),
 														    		who = || "mapCinematicId",
 														    		exit = true
 																}
@@ -415,17 +416,17 @@ do
 										        {
 										            type = DialogType.Dialog,
 										            condition = |d| d.data.recruit == "necromancer",
-										            text = || __D(48, "The stranger turned out to be a necromancer, who extended a crooked finger toward us.\n\n\"Enlighten me, adventurers ... do you fear death?\""),
+										            text = || __D(56, "The stranger turned out to be a necromancer, who extended a crooked finger toward us.\n\n\"Enlighten me, adventurers ... do you fear death?\""),
 										    		who = || "mapCinematicId",
 										            children = {
 										    			{
 															type = DialogType.Response,
-															text = || __R(49, "Ask it to join you."),
+															text = || __R(57, "Ask it to join you."),
 															onChoose = || cinematicMapHelper.CurrentQuestStatus().context.SetObject("option", "recruitNecromancer"),
 															children = {
 																{
 																	type = DialogType.Dialog,
-							                                    	text = || __D(50, "The necromancer grabbed its staff and chuckled.\n\n\"Defeating a greater evil will favor the greater good!\""),
+							                                    	text = || __D(58, "The necromancer grabbed its staff and chuckled.\n\n\"Defeating a greater evil will favor the greater good!\""),
 														    		who = || "mapCinematicId",
 														    		exit = true
 																}
@@ -441,17 +442,17 @@ do
 										        {
 										            type = DialogType.Dialog,
 										            condition = |d| d.data.recruit == "cleric",
-										            text = || __D(48, "The stranger turned out to be a cleric, who looked up and grinned.\n\n\"Hello, my friends! May I be of service?\""),
+										            text = || __D(60, "The stranger turned out to be a cleric, who looked up and grinned.\n\n\"Hello, my friends! May I be of service?\""),
 										    		who = || "mapCinematicId",
 										            children = {
 										    			{
 															type = DialogType.Response,
-															text = || __R(49, "Ask him to join you."),
+															text = || __R(61, "Ask him to join you."),
 															onChoose = || cinematicMapHelper.CurrentQuestStatus().context.SetObject("option", "recruitCleric"),
 															children = {
 																{
 																	type = DialogType.Dialog,
-							                                    	text = || __D(50, "The cleric hoisted his shield, clapped each of us on the back, and said,\n\n\"May the heavens guide us ... through me!\""),
+							                                    	text = || __D(62, "The cleric hoisted his shield, clapped each of us on the back, and said,\n\n\"May the heavens guide us ... through me!\""),
 														    		who = || "mapCinematicId",
 														    		exit = true
 																}
