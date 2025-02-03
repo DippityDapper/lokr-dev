@@ -1,7 +1,7 @@
 "cleric_unshakable"
 {
     "AbilityBehavior"       "PASSIVE"
-    "Icon"                  "ShieldBash02"
+    "Icon"                  "ShieldUp"
 
      "AbilitySpecial"
     {
