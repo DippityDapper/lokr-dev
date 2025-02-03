@@ -71,7 +71,7 @@
     {
         "modifier_cleric_salvation"
         {
-            "Icon"              "ParryStance"
+            "Icon"              "SpikeReforge"
             "IconPriority"      "50"
             "EffectName"        "CleaverUndyingRageStatusFXMega"
 
