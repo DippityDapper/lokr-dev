@@ -400,7 +400,7 @@ do
 															children = {
 																{
 																	type = DialogType.Dialog,
-							                                    	text = || __D(54, "The sapling withered into a pile of dust.\n\n\"Let us quell this dark margic from the realm!\""),
+							                                    	text = || __D(54, "The sapling withered into a pile of dust.\n\n\"Let us quell this dark magic from the realm!\""),
 														    		who = || "mapCinematicId",
 														    		exit = true
 																}

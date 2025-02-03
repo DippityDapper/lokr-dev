@@ -2464,10 +2464,10 @@
 				"receiveDamage" 		"krl_va_combatEnchantress_hit"
 				"receiveArmorDamage" 	"krl_sfx_combatGeneric_armorHit"
 				"death" 				"krl_va_combatEnchantress_death"
-				"useSkill" 				"krl_va_combatGerald_action"
-				"startTurn" 			"krl_va_combatGerald_turnStart"
-				"promote" 				"krl_va_combatGerald_promote"
-				"selectHero" 			"krl_va_combatGerald_select"
+				"useSkill" 				""
+				"startTurn" 			""
+				"promote" 				""
+				"selectHero" 			"krl_va_combatSorceress_action"
 			}
 		}
 	}
