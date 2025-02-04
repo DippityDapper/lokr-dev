@@ -2274,7 +2274,7 @@
 		"AttackType" "MAGIC"
 		"Icon" "Asst_Banner_Arcane"
 		"Background" "hero_roster_legend_bg_forest"
-		"PortraitBackgroundColor" "cca13d"
+		"PortraitBackgroundColor" "37946E"
 		"UnitOnMap" "Asst_Party_RenegadeOrcShaman"
 
 		"stats"
@@ -2408,7 +2408,7 @@
 		"Icon" "Asst_Banner_Arcane"
 		"Background" "hero_roster_legend_bg_forest"
 		"AttackType" "MAGIC"
-		"PortraitBackgroundColor" "f5ee93"
+		"PortraitBackgroundColor" "CCDBBB"
 		"UnitOnMap" "Asst_Party_Mage"
 
 		"stats"
