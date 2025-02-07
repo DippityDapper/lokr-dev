@@ -314,7 +314,7 @@
  			{
  				"1" "demonic_duplication"
  				"2" "oloch_demonlord_call"
- 				"3" "oloch_fire_barrier"
+ 				"3" "oloch_fire_barrier_fix"
  			}
  		}
 
