@@ -27,7 +27,7 @@
         "03"
         {
             "var_type"           "FIELD_FLOAT"
-            "damageRetributed"   "3"
+            "damageRetributed"   "4"
         }
     }
 
@@ -66,6 +66,7 @@
             "States"
             {
                 "CANT_BE_BURNT" "1"
+                "CANT_BE_STUNNED" "1"
             }
 
             "OnPreHit"
@@ -175,13 +176,6 @@
                                             }
                                             "Actions"
                                             {
-                                               "Knockback" 
-                                                {
-                                                    "Target" "%HITTARGET"
-                                                    "Center" "unitPosition(%HITSOURCE)"
-                                                    "Strength" "1"
-                                               }
-
                                                "ApplyModifier"
                                                 {
                                                     "ModifierName"  "modifier_burning"
