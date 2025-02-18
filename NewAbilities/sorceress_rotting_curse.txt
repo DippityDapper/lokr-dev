@@ -1,4 +1,4 @@
-"rebalance_sorceress_rotting_curse"
+"sorceress_rotting_curse"
 {
     "AbilityBehavior"           "UNIT_TARGET"
     "AbilityTeamFilter"         "TEAM_ENEMY"
@@ -9,7 +9,7 @@
     "AnimationID"               "SpecialAttack"
     "Icon"                      "RottingCurse"
     "CastFXId"                  "SorceressHexCastFXMega"
-
+    "LocalizationId"            "stormcloud_sorcerer_rotting_curse"
 
    
     "AbilitySpecial" 
@@ -23,13 +23,13 @@
         "02"
         {
             "var_type"          "FIELD_FLOAT"        
-            "poisonDuration"    "2"
+            "poisonDuration"    "1"
         }
 
         "03"
         {
-            "var_type"          "FIELD_EXPRESSION"        
-            "damage"            "stat(%CASTER, #attackDamage)"
+            "var_type"              "FIELD_EXPRESSION"        
+            "damage"          "stat(%CASTER, #attackDamage)"
         }
     }
 
