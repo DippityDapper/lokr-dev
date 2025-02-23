@@ -307,7 +307,7 @@
  			{
  				"1" "magma_eruption"
  				"2" "oloch_magma_rift"
- 				"3" "oloch_burning_claw"
+ 				"3" "rebalance_oloch_burning_claw"
  			}
 
  			"3"

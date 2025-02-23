@@ -9,10 +9,15 @@
 "COMBAT_MODIFIER_fire_barrier_modifier_TITLE" = "Fire Barrier"
 "COMBAT_MODIFIER_fire_barrier_modifier_DESCRIPTION" = "This unit is immune to <style="debuff">burning</style> and <style="concept">stunned</style>, receives <style="buff">{damageReduction} damage</style>, and explodes against melee, dealing <style="damage">{damageRetributed} physical damage</style> in a radius."
 
+"SKILL_rebalance_oloch_burning_claw_NAME" = "Burning Claw"
+"SKILL_rebalance_oloch_burning_claw_DESCRIPTION" = "Strikes in an arc with his fiery hand, damaging the main target and two units beside the target, dealing <style="concept">knockback</style>.\nApplies <style="debuff">burning</style> to the main target."
+"SKILL_rebalance_oloch_burning_claw_DESCRIPTION_EPIC" = "<style="epic">EPIC:</style> If any of the targets are <style="debuff">burning</style>, they are stunned."
+"SKILL_rebalance_oloch_burning_claw_DESCRIPTION_DATA" = "Damage: <style="damage">{damage} {icon#damageMagical}</style>\nBurning duration: <style="highlight">{burningDuration} {icon#turns}</style>\nRange: <style="highlight">MELEE</style>"
+
 
 "SKILL_rebalance_darkknight_impervious_NAME" = "Impervious"
-"SKILL_rebalance_darkknight_impervious_DESCRIPTION" = "Fully restores armor and becomes immune to damage until his next turn.\nRemoves <style="debuff">burning</style> and <style="debuff">poisoned</style> status."
-"SKILL_rebalance_darkknight_impervious_DESCRIPTION_DATA" = "Duration: <style="highlight">{duration} {icon#turns}</style>\nRange: <style="highlight">SELF</style>"
+"SKILL_rebalance_darkknight_impervious_DESCRIPTION" = "Fully restores armor and becomes immune to damage until the start of his next turn.\nRemoves <style="debuff">burning</style> and <style="debuff">poisoned</style> status."
+"SKILL_rebalance_darkknight_impervious_DESCRIPTION_DATA" = "Range: <style="highlight">SELF</style>"
 "SKILL_rebalance_darkknight_impervious_DESCRIPTION_EXTRA" = "<style="extra">The Dark Knight may move on his next turn, but cannot perform abilities.</style>"
 
 
