@@ -2654,7 +2654,7 @@
 		"Icon" "Asst_Banner_Ranger"
 		"Background" "hero_roster_legend_bg_forest"
 		"UnitOnMap" "Asst_Party_SylvanElf"
-		"PortraitBackgroundColor" "7d8f28"
+		"PortraitBackgroundColor" "cd7332"
 
 		"stats"
 		{
