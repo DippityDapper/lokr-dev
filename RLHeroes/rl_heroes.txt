@@ -2662,13 +2662,13 @@
 
 			"health_max" "4"
 			"armor_max" "0"
-			"armor_regen_per_turn" "2"
+			"armor_regen_per_turn" "0"
 
 			"baseDamage"  "4"
 
 			"rangedAttackRange" "2"
 			"rangedAttackMinRange" "1"
-			"evasion" "0.4"
+			"evasion" "0.3"
 			
 			"visualMoveSpeed" "4" 
 			"visualRunSpeed" "4"
@@ -2757,7 +2757,7 @@
 
 			"baseDamage"  "6"
 			
-			"evasion" "0.4"
+			"evasion" "0.5"
 			
 			"walkSpeed" "3"
 		}
