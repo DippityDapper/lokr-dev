@@ -42,7 +42,7 @@
             "Target"               "%TARGET"
             "SourcePos"             "unitPosition(%SOURCE, #CastPoint)"
             "TargetPos"             "unitPosition(%TARGET, #Chest)"
-            "Model" "MagicBoltProjectile"
+            "Model"         "MagicBoltProjectile"
 
             "Params" 
             {

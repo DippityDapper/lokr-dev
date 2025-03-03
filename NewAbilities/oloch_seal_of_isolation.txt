@@ -1,0 +1,114 @@
+"seal_of_isolation"
+{
+    "AbilityBehavior"           "POINT_TARGET |  NEEDS_CLEAR_TERRAIN"
+    "AbilityTeamFilter"         "TEAM_ENEMY"
+    "AbilityCustomTargetFilter" "not(isOnState(%UNIT, #FIXED_POSITION)) && not(isOnState(%UNIT, #BOSS)) && not(isOnState(%UNIT, #PROP))"
+    "AbilityCastRange"          "stat(%CASTER, #rangedAttackRange)"
+    "AbilityCooldown"           "0"
+    "AbilityAPCost"             "1"
+    "AnimationID"               "SpellCastB"
+    "CastFXId"                  "OlochSealOfImmolationCastFXMega"
+    "Icon"                      "Seal"
+
+    "AbilityAOETeamFilter"      "TEAM_ENEMY"
+    "AbilityAOERange"           "expr(%aoeRadius)"
+    "AbilityAOEKind"            "RANGE_CIRCLE"
+    "AbilityAOECenterOnCaster"  "1"
+    "AbilityAOEAffectsCaster"   "0"
+   
+    "AbilitySpecial" 
+    {
+        "01"
+        {
+            "var_type"          "FIELD_EXPRESSION"
+            "aoeRadius"         "stat(%CASTER, #rangedAttackRange)"
+        }
+
+        "02"
+        {
+            "var_type"          "FIELD_EXPRESSION"        
+            "damage"            "stat(%CASTER, #attackDamage)"
+        }
+
+        "03"
+        {
+            "var_type"          "FIELD_FLOAT"        
+            "numberOfHits"      "1"
+        }
+
+        "04"
+        {
+            "var_type"          "FIELD_FLOAT"        
+            "timeBetweenHits"   "0.2"
+        }
+        "20"
+        {
+            "var_type" "FIELD_STRING"
+            "iconDamageType"  "damagePhysical"
+        }
+    }
+
+    "OnAbilityStart"
+    {
+        "StartLogicTick"
+        {
+            "Time"          "2"
+            "TickType"      "PriorityCenter"
+            "Position"      "pointAdd(unitPosition(%SOURCE), newPoint(0, 1, 0))"
+        }
+    }
+
+    "OnAbilityAction"
+    {
+        "SetToContext"
+        {
+            "Context"           "currentContext()"
+            "Key"               "#targetPosition"
+            "Value"             "%TARGET"
+            "Type"              "FIELD_OBJECT"
+        }
+
+        "ActOnTargets"
+        {
+            "Target"
+            {
+                "Center"                "%CASTER"
+                "Radius"                "expr(%aoeRadius)"
+                "Teams"                 "TEAM_ENEMY"
+                "MaxTargets"            "1"
+                "Random"                "0"
+            }
+            
+            "IteratorName" "#newTarget"
+
+            "Actions"
+            {
+                "SetToContext"
+                {
+                    "Context"           "currentContext()"
+                    "Key"               "#enemyPosition"
+                    "Value"             "%newTarget"
+                    "Type"              "FIELD_OBJECT"
+                }
+                
+                "AttachEffect"
+                {
+                    "EffectName"        "DemonicDuplicationSummonFXMega"
+                    "Target"            "%enemyPosition"
+                }
+
+                "AttachEffect"
+                {
+                    "EffectName"        "DemonicDuplicationSummonFXMega"
+                    "Target"            "%TARGET"
+                }
+
+                "MoveUnit"
+                {
+                    "Target"            "%newTarget"
+                    "Position"          "%targetPosition"
+                }
+            }
+        }
+    }
+}
