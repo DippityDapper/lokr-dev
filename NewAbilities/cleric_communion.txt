@@ -6,7 +6,7 @@
 
     "AnimationID"               "SpellCastA"
     "CastFXId"                  "GenericHolyCastFXMega"
-    "Icon"                      "BlessingOfBattle"
+    "Icon"                      "ShieldBash02"
 
     "AbilityCastRange"          "stat(%CASTER, #rangedAttackRange)"
     "AbilityCooldown"           "4"

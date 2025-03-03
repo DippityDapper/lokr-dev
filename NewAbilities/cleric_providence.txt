@@ -13,7 +13,7 @@
 
     "AnimationID"               "SpellCastA"
     "CastFXId"                  "MartyrsInspirationCastFXMega"
-    "Icon"                      "ShieldUp"
+    "Icon"                      "MartyrsInspiration"
 
 
      "AbilitySpecial"

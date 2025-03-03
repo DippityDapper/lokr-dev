@@ -1,0 +1,80 @@
+"cleric_shield_up"
+{
+    "AbilityBehavior"       "PASSIVE"
+    "Icon"                  "ShieldUp"
+
+     "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"      "FIELD_FLOAT"
+            "extraArmor"     "2"
+        }
+    }
+
+    "Modifiers"
+    {
+        "cleric_shield_up_modifier_provider"
+        {
+            "Passive"       "1"
+
+            "OnTurnStarted"
+            {
+                "ApplyModifier"
+                {
+                    "ModifierName"      "cleric_shield_up_modifier"
+                    "Target"            "%TARGET"
+                    "Duration"          "1"
+                    "Params"
+                    {
+                        "shield_up_extra_armor_bonus" 
+                        {
+                            "type" "FIELD_FLOAT"
+                            "value" "%extraArmor"
+                        }
+                    }
+                }
+            }
+        }
+
+        "cleric_shield_up_modifier"
+        {
+            "EffectName"                "KnightHoldTheLineStatusFXMega"
+            "Icon"          "Fortify"
+            "IconPriority"  "50"
+
+
+            "PropertiesAdd"
+            {
+                "armor_max"             "%shield_up_extra_armor_bonus"
+            }
+
+            "OnRemoved"
+            {
+                "GiveArmor"
+                {
+                    "Target" "%TARGET"
+                    "ArmorAmount" "0"
+                }
+            }
+            
+            "OnAdded"
+            {
+                "GiveArmor"
+                {
+                    "Target"            "%TARGET"
+                    "ArmorAmount"       "%shield_up_extra_armor_bonus"
+                }
+            }
+
+            "OnUnitLeavingNode"
+            {
+                "RemoveModifier"
+                {
+                    "ModifierName"      "cleric_shield_up_modifier"
+                    "Target"            "%TARGET"
+                }
+            }
+        }
+    }
+}
