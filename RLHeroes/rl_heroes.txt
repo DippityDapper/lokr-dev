@@ -2664,11 +2664,11 @@
 			"armor_max" "0"
 			"armor_regen_per_turn" "2"
 
-			"baseDamage"  "4"
+			"baseDamage"  "5"
 
 			"rangedAttackRange" "2"
 			"rangedAttackMinRange" "1"
-			"evasion" "0.4"
+			"evasion" "0.3"
 			
 			"visualMoveSpeed" "4" 
 			"visualRunSpeed" "4"
@@ -2735,7 +2735,7 @@
 			"armor_max" "0"
 			"armor_regen_per_turn" "2"
 
-			"baseDamage"  "5"
+			"baseDamage"  "6"
 			
 			"evasion" "0.4"
 
@@ -2755,9 +2755,9 @@
 			"armor_max" "0"
 			"armor_regen_per_turn" "2"
 
-			"baseDamage"  "6"
+			"baseDamage"  "8"
 			
-			"evasion" "0.4"
+			"evasion" "0.5"
 			
 			"walkSpeed" "3"
 		}
