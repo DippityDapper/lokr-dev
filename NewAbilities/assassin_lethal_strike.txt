@@ -14,7 +14,7 @@
         "01"
         {
             "var_type"      "FIELD_EXPRESSION"
-            "MinDamage"     "ceil(stat(%CASTER, #attackDamage)/2)-1"
+            "MinDamage"     "ceil(stat(%CASTER, #attackDamage)/2)+1"
         }
 
         "02"
