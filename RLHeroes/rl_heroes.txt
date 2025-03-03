@@ -2644,7 +2644,7 @@
 	"MinionAssassin" 
 	{
 		"UniqueId" "Assassin"
-		"Model" "HumanRogueFemale"
+		"Model" "BanditHighwayMan"
 		"MetaExo" "ExoSkeletonHumanSylvanElf_MetaDataAsset"
 		"Name" "MINION_ASSASSIN"
 		"InheritsFrom" "Hero"
