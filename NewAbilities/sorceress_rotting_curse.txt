@@ -4,7 +4,7 @@
     "AbilityTeamFilter"         "TEAM_ENEMY"
     "AbilityCastRange"          "stat(%CASTER, #rangedAttackRange)"
     "AbilityCastMinRange"       "stat(%CASTER, #rangedAttackMinRange)"
-    "AbilityCooldown"           "4"
+    "AbilityCooldown"           "3"
     "AbilityAPCost"             "1"
     "AnimationID"               "SpecialAttack"
     "Icon"                      "RottingCurse"
