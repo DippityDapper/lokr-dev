@@ -29,8 +29,14 @@ BRUXA
 BRAVEBARK
 -	Seismic Pound: changed to a regular action (AbilityAPCost changed to 1)
 
+KNIGHT
+- HP increased to 6/7/9
+- Armor decreased to 5/6/8
+
 DARK KNIGHT
--	Impervious: fully restores armor and now becomes immune to damage until his next turn
+-	HP increased to 5/6/7
+- Armor increased to 6/7/8
+- Impervious: fully restores armor and now becomes immune to damage until his next turn
 -	Soulstrike: changed to a regular action, now heals the Dark Knight by the damage dealt
 
 WITCH DOCTOR
