@@ -402,7 +402,7 @@
 			"health_max" 			"5"
 			"armor_max" 			"0"
 			"armor_regen_per_turn" 	"0"
-			"baseDamage"  			"4"
+			"baseDamage"  			"5"
 			"rangedAttackRange" 	"4"
 			"rangedAttackMinRange" 	"2"
 			"visualMoveSpeed" 		"2"
@@ -476,7 +476,7 @@
 			"health_max" 			"7"
 			"armor_max" 			"0"
 			"armor_regen_per_turn" 	"0"
-			"baseDamage"  			"5"
+			"baseDamage"  			"6"
 			"rangedAttackRange" 	"4"
 			"rangedAttackMinRange" 	"2"
 			"visualMoveSpeed" 		"2"
@@ -496,7 +496,7 @@
 			"health_max" 			"9"
 			"armor_max" 			"0"
 			"armor_regen_per_turn" 	"0"
-			"baseDamage"  			"7"
+			"baseDamage"  			"8"
 			"rangedAttackRange" 	"5"
 			"rangedAttackMinRange" 	"2"
 			"visualMoveSpeed" 		"2"
@@ -526,8 +526,8 @@
 
 			"level" "1"
 				
-			"health_max" "6"
-			"armor_max" "2"
+			"health_max" "9"
+			"armor_max" "0"
 			"armor_regen_per_turn" "0"
 			"armor_gain_passTurn" "0"
 			"baseDamage"  "5"
@@ -602,8 +602,8 @@
 
 			"level" "2"
 				
-			"health_max" "8"
-			"armor_max" "2"
+			"health_max" "11"
+			"armor_max" "0"
 			"armor_regen_per_turn" "0"
 			"armor_gain_passTurn" "0"
 			"baseDamage"  "7"
@@ -625,11 +625,11 @@
 
 			"level" "3"
 				
-			"health_max" "11"
-			"armor_max" "2"
+			"health_max" "13"
+			"armor_max" "0"
 			"armor_regen_per_turn" "0"
 			"armor_gain_passTurn" "0"
-			"baseDamage"  "8"
+			"baseDamage"  "9"
 
 			"rangedAttackRange" "0" 
 			"rangedAttackMinRange" "0"
@@ -785,8 +785,8 @@
 
 			"level" "1"
 				
-			"health_max" "5"
-			"armor_max" "6"
+			"health_max" "6"
+			"armor_max" "5"
 			"armor_regen_per_turn" "2"
 
 			"armor_gain_passTurn" "2"
@@ -881,8 +881,8 @@
 
 			"level" "3"
 				
-			"health_max" "8"
-			"armor_max" "9"
+			"health_max" "9"
+			"armor_max" "8"
 			"armor_regen_per_turn" "4"
 
 			"armor_gain_passTurn" "2"
@@ -1047,6 +1047,7 @@
 			"armor_regen_per_turn" "0"
 			"armor_gain_passTurn" "2"
 			"baseDamage"  "6"
+			"barbarian_regeneration" "1"
 
 			"rangedAttackRange" "0" 
 			"rangedAttackMinRange" "1"
@@ -1058,6 +1059,7 @@
 		{
 			"11" "berserk_trait" 
 			"100" "mighty_endturn_trait"
+			"200" "barbarian_regeneration_trait"
  		}
 		
 		"skillProgression"
@@ -1115,6 +1117,7 @@
 			"armor_regen_per_turn" "0"
 			"armor_gain_passTurn" "2"
 			"baseDamage"  "8"
+			"barbarian_regeneration" "1"
 
 			"rangedAttackRange" "0" 
 			"rangedAttackMinRange" "1"
@@ -1138,6 +1141,7 @@
 			"armor_regen_per_turn" "0"
 			"armor_gain_passTurn" "2"
 			"baseDamage"  "9"
+			"barbarian_regeneration" "1"
 
 			"rangedAttackRange" "0" 
 			"rangedAttackMinRange" "1"
@@ -1291,8 +1295,8 @@
 		"stats"
 		{
 			"level" "1"		
-			"health_max" "4"
-			"armor_max" "7"
+			"health_max" "5"
+			"armor_max" "6"
 			"armor_regen_per_turn" "2"
 			"armor_gain_passTurn" "2"
 			"baseDamage"  "3"
@@ -1356,8 +1360,8 @@
 
 			"level" "2"
 				
-			"health_max" "5"
-			"armor_max" "8"
+			"health_max" "6"
+			"armor_max" "7"
 			"armor_regen_per_turn" "3"
 			"armor_gain_passTurn" "2"
 			"baseDamage"  "4"
@@ -1377,8 +1381,8 @@
 
 			"level" "3"
 				
-			"health_max" "6"
-			"armor_max" "9"
+			"health_max" "7"
+			"armor_max" "8"
 			"armor_regen_per_turn" "4"
 			"armor_gain_passTurn" "2"
 			"baseDamage"  "6"
@@ -1657,13 +1661,13 @@
 		{
 
 			"level" "1"
-			"health_max" "3"
+			"health_max" "4"
 			"armor_max" "0"
 			"armor_regen_per_turn" "0"
 			"armor_gain_passTurn" "0"
 			"baseDamage"  "3"
 
-			"rangedAttackRange" "3" 
+			"rangedAttackRange" "4" 
 			"rangedAttackMinRange" "2"
 			
 			
@@ -1789,7 +1793,7 @@
 
 			"armor_gain_passTurn" "2"
 
-			"baseDamage"  "4"
+			"baseDamage"  "5"
 			"sasquatch_regeneration" "1"
 
 			"rangedAttackRange" "3" 
@@ -1863,7 +1867,7 @@
 
 			"armor_gain_passTurn" "2"
 
-			"baseDamage"  "5"
+			"baseDamage"  "6"
 			"sasquatch_regeneration" "1"
 
 			"rangedAttackRange" "3" 
@@ -1888,7 +1892,7 @@
 
 			"armor_gain_passTurn" "2"
 
-			"baseDamage"  "6"
+			"baseDamage"  "7"
 			"sasquatch_regeneration" "2"
 
 			"rangedAttackRange" "3" 
