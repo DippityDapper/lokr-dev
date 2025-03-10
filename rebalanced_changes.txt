@@ -1,0 +1,63 @@
+*The majority of the changes detailed here and implemented in the mod files were made in response to discussions in the rebalanced channel, but a couple of them are my own ideas*
+
+REGSON
+-	HP increased to 9/11/13
+-	Armor decreased to 0/0/0
+-	Attack increased to 5/7/9
+-	Traits
+~	Eldritch Heal: now heals when an enemy is killed within range 3 of him, regardless of whether he is the one to kill it
+~	Eldritch Siphon: receives –[level] magic damage
+-	Eldritch Blades: damage increased to ceil([attack]/2) physical damage plus floor([attack]/2) true damage
+-	Shadow Uppercut (melee): damage increased to [attack]+2
+
+GERALD LIGHTSEEKER
+-	Divine Blade: damage increased to floor(4*[attack]/3) true damage
+-	Avenging Blade: damage increased to [attack]+[missing HP]
+-	Martyr’s Prayer: healing increased to 6 HP, now removes all debuffs
+
+ASRA
+-	Spider Bite: epic effect now inflicts sleep in addition to dealing 3 bonus true damage
+
+OLOCH
+-	Burning Claw: damage increased to [attack]-2, cooldown reduced to 2, epic effect now stuns weakened enemies
+-	Fire Barrier: changes already implemented
+
+BRUXA
+-	Attack increased to 5/6/8 (from 4/5/7)
+-	Voodoo Doll: each hit on the doll now deals [damage]+1 to the target
+
+BRAVEBARK
+-	Seismic Pound: changed to a regular action (AbilityAPCost changed to 1)
+
+DARK KNIGHT
+-	Impervious: fully restores armor and now becomes immune to damage until his next turn
+-	Soulstrike: changed to a regular action, now heals the Dark Knight by the damage dealt
+
+WITCH DOCTOR
+-	HP increased to 4/4/5
+-	Range increased to 4/5/6
+-	Shamanic Heal: heal changed to [attack]
+-	Force of Nature: pull increased to 2 hexes, push increased to 3 hexes
+-	Tainted Healing: range increased to [range]
+-	Healing Totem: heal increased to 2 HP/turn
+
+SORCERESS
+-	Rotting Curse: cooldown reduced to 3
+-	Punishing Curse: damage multiplier changed to [level]+2, cooldown reduced to 0
+-	Trebuchet: now applies rooted for 1 turn to all targets hit by splash damage (1-hex area)
+
+SASQUATCH
+-	Attack increased to 5/6/7
+-	Mudball Throw: cooldown reduced to 2
+-	Mighty Blow: damage increased to [attack]+2, adds epic effect to stun target for an extra turn if weakened
+-	Abominable Chomp: damage and heal increased to ceil(2*[attack]/3), adds epic effect to inflict bleed if target is immobilized
+
+SYLVAN ELF
+-	Living Bow: damage changed to ceil(4*[attack]/5); this makes base damage without any sharpening stones 3/4/4 instead of 3/3/4
+-	Woodland Stride: damage increased to ceil(4*[attack]/5)
+
+BARBARIAN
+-	Gains 1 innate health regeneration when not bleeding
+-	Berserk chance increased to 50%
+-	Berserk now heals only +1 HP (combined with innate regeneration, net heal is still +2 when berserk)
+-	Berserk Ritual: heal/epic heal decreased to 1/3 (but total heal when not bleeding is still the same); ideally this will make his second L2 skill more viable since berserk ritual now isn’t the only way for the Barbarian to reliably heal himself
