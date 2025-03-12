@@ -1,3 +1,6 @@
+"ACHIEVEMENT_fast_town_brawl_trolls_NAME" = "A Wizard is Sometimes Late"
+"ACHIEVEMENT_fast_town_brawl_trolls_DESC" = "Save Argaleham from the trolls before round {round}."
+
 "COMBAT_MODIFIER_modifier_fire_barrier_TITLE" = "Fire Barrier"
 "COMBAT_MODIFIER_modifier_fire_barrier_DESCRIPTION" = "This unit is immune to <style="debuff">burning</style>, receives <style="buff">{damageReduction} damage</style>, and brings retribution of <style="damage">{damageRetributed} true damage</style> on the attacker."
 
@@ -11,10 +14,13 @@
 
 
 "SKILL_darkknight_impervious_NAME" = "Impervious"
-"SKILL_darkknight_impervious_DESCRIPTION" = "Fully restores armor and becomes immune to damage until his next turn.\nRemoves <style="debuff">burning</style> and <style="debuff">poisoned</style> status."
-"SKILL_rebalance_darkknight_impervious_DESCRIPTION_DATA" = "Duration: <style="highlight">{duration} {icon#turns}</style>\nRange: <style="highlight">SELF</style>"
-"SKILL_rebalance_darkknight_impervious_DESCRIPTION_EXTRA" = "<style="extra">The Dark Knight may move on his next turn, but cannot perform abilities.</style>"
+"SKILL_darkknight_impervious_DESCRIPTION" = "Fully restores armor and gains <style="buff">extra armor</style>, reducing all incoming damage.\nRemoves <style="debuff">burning</style> and <style="debuff">poisoned</style> status."
+"SKILL_darkknight_impervious_DESCRIPTION_DATA" = "Extra armor: <style="buff">+{armorBonus} {icon#statArmor}</style>\nDamage reduction: <style="buff">{damageReduction}</style>\nDuration: <style="highlight">{duration} {icon#turns}</style>\nRange: <style="highlight">SELF</style>"
 
+"SKILL_darkknight_soulstrike_NAME" = "Soulstrike"
+"SKILL_darkknight_soulstrike_DESCRIPTION" = "Lands a cursed strike upon the target, dealing armor-piercing damage and healing himself in the process."
+"SKILL_darkknight_soulstrike_DESCRIPTION_EPIC" = "<style="epic">EPIC:</style> Gains an attack bonus if the target is killed."
+"SKILL_darkknight_soulstrike_DESCRIPTION_DATA" = "Damage: <style="damage">{damage} {icon#damageTrue}</style>\nHealing: <style="buff">{healthGain} {icon#statHP}</style>\nEPIC attack bonus: +{extraDamage}\nEPIC duration: {duration} {icon#turns}\nRange: <style="highlight">MELEE</style>"
 
 "SKILL_rebalance_sorceress_rotting_curse_NAME" = "Rotting Curse"
 "SKILL_rebalance_sorceress_rotting_curse_DESCRIPTION" = "Binds an enemy unit to the ground, applying <style="concept">rooted</style> and <style="debuff">poisoned</style>."
@@ -24,10 +30,14 @@
 "SKILL_regson_eldritch_heal_trait_DESCRIPTION" = "Heals some HP whenever an enemy dies less than {range} hexes away."
 "SKILL_regson_eldritch_heal_trait_DESCRIPTION_DATA" = "Healing: <style="buff">{level} {icon#statHP}</style>"
 
+"SKILL_regson_eldritch_syphon_trait_NAME" = "Eldritch Syphon"
+"SKILL_regson_eldritch_syphon_trait_DESCRIPTION" = "Resists some magic damage. Whenever he is hit with magic damage, enters Eldritch State (used to trigger EPIC effects)."
+"SKILL_regson_eldritch_syphon_trait_DESCRIPTION_DATA" = "Damage reduction: <style="buff">{reduction} {icon#damageMagical}</style>\nState duration: <style="highlight">{duration} {icon#turns}</style>"
+
 "SKILL_asra_spider_bite_NAME" = "Spider Bite"
 "SKILL_asra_spider_bite_DESCRIPTION" = "Stabs the target, dealing damage and applying <style="debuff">poisoned</style>."
 "SKILL_asra_spider_bite_DESCRIPTION_EPIC" = "<style="epic">EPIC:</style> Deals bonus damage and inflicts asleep against <style="debuff">weakened</style> targets."
-"SKILL_asra_spider_bite_DESCRIPTION_DATA" = "Damage: <style="damage">{damage} {icon#damageTrue}</style>\nPoisoned duration: <style="highlight">{duration} {icon#turns}</style>\nEPIC damage: <style="damage">+{extraDamage} {icon#turns}</style>\nEPIC asleep duration: <style="highlight">{sleepDuration} {icon#turns}</style>\nRange: <style="highlight">MELEE</style>"
+"SKILL_asra_spider_bite_DESCRIPTION_DATA" = "Damage: <style="damage">{damage} {icon#damageTrue}</style>\nPoisoned duration: <style="highlight">{duration} {icon#turns}</style>\nEPIC damage: <style="damage">+{extraDamage}</style>\nEPIC asleep duration: <style="highlight">{sleepDuration} {icon#turns}</style>\nRange: <style="highlight">MELEE</style>"
 
 "SKILL_oloch_burning_claw_NAME" = "Burning Claw"
 "SKILL_oloch_burning_claw_DESCRIPTION" = "Strikes in an arc with his fiery hand, damaging the main target and two units beside the target.\nApplies <style="debuff">burning</style> to the main target."
