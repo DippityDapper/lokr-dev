@@ -402,7 +402,7 @@
 			"health_max" 			"5"
 			"armor_max" 			"0"
 			"armor_regen_per_turn" 	"0"
-			"baseDamage"  			"5"
+			"baseDamage"  			"4"
 			"rangedAttackRange" 	"4"
 			"rangedAttackMinRange" 	"2"
 			"visualMoveSpeed" 		"2"
@@ -476,7 +476,7 @@
 			"health_max" 			"7"
 			"armor_max" 			"0"
 			"armor_regen_per_turn" 	"0"
-			"baseDamage"  			"6"
+			"baseDamage"  			"5"
 			"rangedAttackRange" 	"4"
 			"rangedAttackMinRange" 	"2"
 			"visualMoveSpeed" 		"2"
@@ -496,7 +496,7 @@
 			"health_max" 			"9"
 			"armor_max" 			"0"
 			"armor_regen_per_turn" 	"0"
-			"baseDamage"  			"8"
+			"baseDamage"  			"7"
 			"rangedAttackRange" 	"5"
 			"rangedAttackMinRange" 	"2"
 			"visualMoveSpeed" 		"2"
@@ -526,8 +526,8 @@
 
 			"level" "1"
 				
-			"health_max" "9"
-			"armor_max" "0"
+			"health_max" "6"
+			"armor_max" "2"
 			"armor_regen_per_turn" "0"
 			"armor_gain_passTurn" "0"
 			"baseDamage"  "5"
@@ -602,8 +602,8 @@
 
 			"level" "2"
 				
-			"health_max" "11"
-			"armor_max" "0"
+			"health_max" "8"
+			"armor_max" "2"
 			"armor_regen_per_turn" "0"
 			"armor_gain_passTurn" "0"
 			"baseDamage"  "7"
@@ -625,11 +625,11 @@
 
 			"level" "3"
 				
-			"health_max" "13"
-			"armor_max" "0"
+			"health_max" "11"
+			"armor_max" "2"
 			"armor_regen_per_turn" "0"
 			"armor_gain_passTurn" "0"
-			"baseDamage"  "9"
+			"baseDamage"  "8"
 
 			"rangedAttackRange" "0" 
 			"rangedAttackMinRange" "0"
@@ -765,6 +765,139 @@
 		}
 	}
 
+	"RLHumanAnyaLvl1" 
+	{
+		"UniqueId" "Anya"
+		"Model" "HumanMusketeer"
+		"MetaExo" "ExoSkeletonHumanAsra_MetaDataAsset"
+		"Name" "ANYA"
+		"InheritsFrom" "Hero"
+		"cinematicTags" "Heroe|Legend|Anya|Female|ct_legend|ct_ranged|ct_craft|ct_perception|ct_stealth|UPGRADES_crafty"
+		"Background" "hero_roster_legend_bg_forest"
+		"Icon" "Asst_Banner_Asra"
+		"AttackType" "RANGED"
+		"UnitOnMap" "Asst_Party_Azra"
+		"PortraitBackgroundColor" "f19281"
+		"nextLevelArchetype" "RLHumanAnyaLvl2"
+
+		"stats"
+		{
+
+			"level" "1"
+				
+			"health_max" "4"
+			"armor_max" "2"
+			"armor_regen_per_turn" "0"
+			"baseDamage"  "5"
+
+			"rangedAttackRange" "4" 
+			"rangedAttackMinRange" "2"
+			
+			"evasion" "0.25" 
+			
+			"walkSpeed" "2"
+		}
+
+		"skills"
+		{
+			"11" "asra_shield_of_shadows_trait"
+
+			"100" "crafty_endturn_trait"
+ 		}
+
+ 		"skillProgression"
+ 		{
+ 			"1" 
+ 			{
+ 				"1" "anya_vampiric_claw"
+ 			}
+
+ 			"2" 
+ 			{
+ 				"1" "asra_spider_bite"
+ 				"2" "asra_shiv"
+ 				"3" "asra_hit_and_run"
+ 			}
+
+ 			"3"
+ 			{
+ 				"1" "asra_shadow_strike"
+ 				"2" "asra_shadows_lullaby"
+ 				"3" "asra_spider_stance"
+ 			}
+ 		}
+
+ 		"defaultSkill" "anya_straight_shot"
+
+ 		"states"
+  		{
+  			"LEGEND" "1"
+  		}
+
+  		"soundConfig"
+		{
+			"assetId" "DynamicSoundGroupAsraSounds"
+			"sounds"
+			{
+				"receiveDamage" "krl_va_combatAsra_hit"
+				"receiveArmorDamage" "krl_sfx_combatGeneric_armorHit"
+				"death" "krl_va_combatAsra_death"
+				"useSkill" "krl_va_combatAsra_action"
+				"startTurn" "krl_va_combatAsra_turnStart"
+				"promote" "krl_va_combatAsra_promote"
+				"victory" "krl_va_combatAsra_victory"
+				"selectHero" "krl_va_combatAsra_select"
+			}
+		}
+	}
+
+	"RRLHumanAnyaLvl2" 
+	{
+		"InheritsFrom" "RLHumanAsraDagerfallLvl1"
+		"nextLevelArchetype" "RLHumanAsraDagerfallLvl3"
+
+		"stats"
+		{
+			"level" "2"
+				
+			"health_max" "6"
+			"armor_max" "2"
+			"armor_regen_per_turn" "0"
+			"baseDamage"  "5"
+
+			"rangedAttackRange" "4" 
+			"rangedAttackMinRange" "2"
+			
+			"evasion" "0.25" 
+			
+			"walkSpeed" "3"
+		}
+	}
+
+	"RLHumanAnyaLvl3" 
+	{
+		"InheritsFrom" "RLHumanAnyaLvl1"
+
+		"stats"
+		{
+			"level" "3"
+				
+			"health_max" "8"
+			"armor_max" "2"
+			"armor_regen_per_turn" "0"
+			"baseDamage"  "7"
+
+			"rangedAttackRange" "5" 
+			"rangedAttackMinRange" "2"
+			
+			"evasion" "0.25" 
+			
+			"walkSpeed" "3"
+		}
+	}
+
+	
+
 	"MinionFemaleKnight" 
 	{
 		"UniqueId" "FemaleKnight"
@@ -785,8 +918,8 @@
 
 			"level" "1"
 				
-			"health_max" "6"
-			"armor_max" "5"
+			"health_max" "5"
+			"armor_max" "6"
 			"armor_regen_per_turn" "2"
 
 			"armor_gain_passTurn" "2"
@@ -881,8 +1014,8 @@
 
 			"level" "3"
 				
-			"health_max" "9"
-			"armor_max" "8"
+			"health_max" "8"
+			"armor_max" "9"
 			"armor_regen_per_turn" "4"
 
 			"armor_gain_passTurn" "2"
@@ -1047,7 +1180,6 @@
 			"armor_regen_per_turn" "0"
 			"armor_gain_passTurn" "2"
 			"baseDamage"  "6"
-			"barbarian_regeneration" "1"
 
 			"rangedAttackRange" "0" 
 			"rangedAttackMinRange" "1"
@@ -1059,7 +1191,6 @@
 		{
 			"11" "berserk_trait" 
 			"100" "mighty_endturn_trait"
-			"200" "barbarian_regeneration_trait"
  		}
 		
 		"skillProgression"
@@ -1117,7 +1248,6 @@
 			"armor_regen_per_turn" "0"
 			"armor_gain_passTurn" "2"
 			"baseDamage"  "8"
-			"barbarian_regeneration" "1"
 
 			"rangedAttackRange" "0" 
 			"rangedAttackMinRange" "1"
@@ -1141,7 +1271,6 @@
 			"armor_regen_per_turn" "0"
 			"armor_gain_passTurn" "2"
 			"baseDamage"  "9"
-			"barbarian_regeneration" "1"
 
 			"rangedAttackRange" "0" 
 			"rangedAttackMinRange" "1"
@@ -1295,8 +1424,8 @@
 		"stats"
 		{
 			"level" "1"		
-			"health_max" "5"
-			"armor_max" "6"
+			"health_max" "4"
+			"armor_max" "7"
 			"armor_regen_per_turn" "2"
 			"armor_gain_passTurn" "2"
 			"baseDamage"  "3"
@@ -1360,8 +1489,8 @@
 
 			"level" "2"
 				
-			"health_max" "6"
-			"armor_max" "7"
+			"health_max" "5"
+			"armor_max" "8"
 			"armor_regen_per_turn" "3"
 			"armor_gain_passTurn" "2"
 			"baseDamage"  "4"
@@ -1381,8 +1510,8 @@
 
 			"level" "3"
 				
-			"health_max" "7"
-			"armor_max" "8"
+			"health_max" "6"
+			"armor_max" "9"
 			"armor_regen_per_turn" "4"
 			"armor_gain_passTurn" "2"
 			"baseDamage"  "6"
@@ -1667,7 +1796,7 @@
 			"armor_gain_passTurn" "0"
 			"baseDamage"  "3"
 
-			"rangedAttackRange" "4" 
+			"rangedAttackRange" "3" 
 			"rangedAttackMinRange" "2"
 			
 			
@@ -1793,7 +1922,7 @@
 
 			"armor_gain_passTurn" "2"
 
-			"baseDamage"  "5"
+			"baseDamage"  "4"
 			"sasquatch_regeneration" "1"
 
 			"rangedAttackRange" "3" 
@@ -1867,7 +1996,7 @@
 
 			"armor_gain_passTurn" "2"
 
-			"baseDamage"  "6"
+			"baseDamage"  "5"
 			"sasquatch_regeneration" "1"
 
 			"rangedAttackRange" "3" 
@@ -1892,7 +2021,7 @@
 
 			"armor_gain_passTurn" "2"
 
-			"baseDamage"  "7"
+			"baseDamage"  "6"
 			"sasquatch_regeneration" "2"
 
 			"rangedAttackRange" "3" 
@@ -2384,11 +2513,11 @@
 		{
 
 			"level" "3"
-			"health_max" "6"
+			"health_max" "5"
 			"armor_max" "0"
 			"armor_regen_per_turn" "0"
 			"armor_gain_passTurn" "0"
-			"baseDamage"  "6"
+			"baseDamage"  "5"
 
 			"rangedAttackRange" "5" 
 			"rangedAttackMinRange" "2"
@@ -2509,7 +2638,7 @@
 
 			"level" "3"
 							
-			"health_max" "9"
+			"health_max" "10"
 			"armor_max" "0"
 			"armor_regen_per_turn" "0"
 			"armor_gain_passTurn" "0"
@@ -2543,8 +2672,8 @@
 			"level" 				"1"
 							
 			"health_max" 			"5"
-			"armor_max" 			"3"
-			"armor_regen_per_turn" 	"1"
+			"armor_max" 			"4"
+			"armor_regen_per_turn" 	"0"
 			"baseDamage"  			"4"
 			"holyPoints"			"0"
 			"armor_gain_passTurn" 	"0"
@@ -2610,8 +2739,8 @@
 			"level" 				"2"
 							
 			"health_max" 			"6"
-			"armor_max" 			"4"
-			"armor_regen_per_turn" 	"1"
+			"armor_max" 			"5"
+			"armor_regen_per_turn" 	"0"
 			"baseDamage"  			"4"
 			"holyPoints"			"0"
 			
@@ -2632,8 +2761,8 @@
 			"level" 				"3"
 							
 			"health_max" 			"8"
-			"armor_max" 			"5"
-			"armor_regen_per_turn" 	"2"
+			"armor_max" 			"6"
+			"armor_regen_per_turn" 	"0"
 			"baseDamage"  			"5"
 			"holyPoints"			"0"
 			"armor_gain_passTurn" 	"2"
@@ -2652,13 +2781,13 @@
 		"MetaExo" "ExoSkeletonHumanSylvanElf_MetaDataAsset"
 		"Name" "MINION_ASSASSIN"
 		"InheritsFrom" "Hero"
-		"cinematicTags" "Heroe|Minion|Male|ct_minion|ct_athletics|ct_social|ct_perception|UPGRADES_athletic"
+		"cinematicTags" "Heroe|Minion|Female|ct_minion|ct_athletics|ct_social|ct_perception|UPGRADES_athletic"
 		"nextLevelArchetype" "MinionAssassinLvl2"
 		"AttackType" "PHYSICAL"
 		"Icon" "Asst_Banner_Ranger"
 		"Background" "hero_roster_legend_bg_forest"
 		"UnitOnMap" "Asst_Party_SylvanElf"
-		"PortraitBackgroundColor" "7d8f28"
+		"PortraitBackgroundColor" "cd7332"
 
 		"stats"
 		{
@@ -2668,11 +2797,11 @@
 			"armor_max" "0"
 			"armor_regen_per_turn" "0"
 
-			"baseDamage"  "5"
+			"baseDamage"  "4"
 
 			"rangedAttackRange" "2"
 			"rangedAttackMinRange" "1"
-			"evasion" "0.4"
+			"evasion" "0.3"
 			
 			"visualMoveSpeed" "4" 
 			"visualRunSpeed" "4"
@@ -2696,14 +2825,14 @@
 
  			"2" 
  			{
- 				"1" "assassin_quickstep"
+ 				"1" "assassin_counterattack"
  				"2" "assassin_dagger"
  			}
 
  			"3"
  			{
  				"1" "assassin_backstab"
- 				"2" "assassin_counterattack"
+ 				"2" "assassin_quickstep"
  			}
  		}
 
@@ -2735,11 +2864,11 @@
 		{
 			"level" "2"
 
-			"health_max" "6"
+			"health_max" "5"
 			"armor_max" "0"
-			"armor_regen_per_turn" "0"
+			"armor_regen_per_turn" "2"
 
-			"baseDamage"  "6"
+			"baseDamage"  "5"
 			
 			"evasion" "0.4"
 
@@ -2755,15 +2884,15 @@
 		{
 			"level" "3"
 
-			"health_max" "8"
+			"health_max" "6"
 			"armor_max" "0"
-			"armor_regen_per_turn" "0"
+			"armor_regen_per_turn" "2"
 
-			"baseDamage"  "7"
+			"baseDamage"  "6"
 			
-			"evasion" "0.4"
+			"evasion" "0.5"
 			
-			"walkSpeed" "4"
+			"walkSpeed" "3"
 		}
 	}
 	
@@ -2816,14 +2945,21 @@
 
 		"skillProgression"
 			{
+"1"
+				{
+					"1"	"sasquatch_smash"
+				}
+				
 				"2" 
 				{
 					"1" "war_howl"
+					"2" "sasquatch_abominable_chomp"
 				}
 
 				"3"
 				{
 					"1" "rupture"
+					"2" "knight_shield_bash"
 				}
 			}
 
