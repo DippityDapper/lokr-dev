@@ -2797,11 +2797,11 @@
 			"armor_max" "0"
 			"armor_regen_per_turn" "0"
 
-			"baseDamage"  "4"
+			"baseDamage"  "5"
 
 			"rangedAttackRange" "2"
 			"rangedAttackMinRange" "1"
-			"evasion" "0.3"
+			"evasion" "0.4"
 			
 			"visualMoveSpeed" "4" 
 			"visualRunSpeed" "4"
@@ -2864,11 +2864,11 @@
 		{
 			"level" "2"
 
-			"health_max" "5"
+			"health_max" "6"
 			"armor_max" "0"
 			"armor_regen_per_turn" "2"
 
-			"baseDamage"  "5"
+			"baseDamage"  "6"
 			
 			"evasion" "0.4"
 
@@ -2884,15 +2884,15 @@
 		{
 			"level" "3"
 
-			"health_max" "6"
+			"health_max" "8"
 			"armor_max" "0"
 			"armor_regen_per_turn" "2"
 
-			"baseDamage"  "6"
+			"baseDamage"  "7"
 			
-			"evasion" "0.5"
+			"evasion" "0.4"
 			
-			"walkSpeed" "3"
+			"walkSpeed" "4"
 		}
 	}
 	
