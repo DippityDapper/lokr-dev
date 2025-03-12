@@ -1,4 +1,4 @@
-"cleric_whack"
+"anya_vampiric_claw"
 {
     "AbilityBehavior"   "MELEE | HAS_CHANCE_TO_HIT"
     "AbilityTeamFilter" "TEAM_ENEMY"
@@ -6,7 +6,7 @@
     "AbilityCooldown"   "0"
     "AbilityAPCost"     "stat(%CASTER, #attackCostAP)"
     "AnimationID"       "Attack"
-    "Icon"              "AreaKnockbackMeleeAttack"
+    "Icon"              "VampiricClaw"
     "CastFXId"          "CommonSlashSoundFXMega"
 
     "AbilitySpecial" 
@@ -22,26 +22,17 @@
             "var_type" "FIELD_EXPRESSION"        
             "MaxDamage"  "stat(%CASTER, #attackDamage)+1"
         }
-		"03"
-        {
-            "var_type"                  "FIELD_FLOAT"
-            "extraArmor"                "2"
-        }
 
-        "04"
-        {
-            "var_type"              "FIELD_FLOAT"
-            "duration"              "2"   
-        }
     }
 
 
 
     "OnAbilityAction"
     {
+
         "Hit"
         {
-            "Target" "%TARGET"
+            "Target" "%newTarget"
             "EffectName" "GenericHitFXMega" 
             "Tags" "stringList(#MELEE, #TARGETED)"
 
@@ -53,62 +44,22 @@
                     "Damage"        "randomI(expr(%MinDamage), expr(%MaxDamage))"
                 }
             }
-			
-			"Actions"
+
+            "Actions"
             {
-                "Conditional"
+                "Heal"
                 {
-                    "Condition"     "isOnState(%HITTARGET, #IMMOBILIZED)"
-
-                    "Actions" 
-                    {
-						"ApplyModifier"
-						{
-							"ModifierName"      "modifier_whack_epic"
-							"Target"            "%SOURCE"
-							"Duration"          "%duration"
-						}
-
-                        "MarkHitLegendary"
-                        {
-                        }
-                    }
-                }
+                    "Target"        "%HITSOURCE"
+                    "HealAmount"    "1"
+                } 
+                "AttachEffect"
+                {
+                    "EffectName" "HealingFXMega"
+                    "Target" "%HITSOURCE"
+                } 
             }
         }
     }
-	
-	"Modifiers"
-	{
-		"modifier_whack_epic"
-		{
-            "Icon"                      "Fortify"
-            "IconPriority"              "50"
-
-            "PropertiesAdd"
-            {
-                "armor_max"             "%extraArmor"
-            }
-
-            "OnAdded"
-            {
-                "GiveArmor"
-                {
-                    "Target"            "%TARGET"
-                    "ArmorAmount"       "%extraArmor"
-                }
-            }
-
-            "OnRemoved"
-            {
-                "GiveArmor"
-                {
-                    "Target"            "%TARGET"
-                    "ArmorAmount"       "0"
-                }
-            }
-		}
-	}
 
     "AIConfigB"
     {
