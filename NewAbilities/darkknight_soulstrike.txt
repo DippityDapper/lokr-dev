@@ -31,20 +31,24 @@
             "var_type"              "FIELD_EXPRESSION"
             "healthGain"            "stat(%CASTER, #attackDamage)"
         }
+
+        "03"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "extraDamage"           "2"
+        }
+
+        "04"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "duration"              "2"
+        }
     }
 
 
 
     "OnAbilityAction"
     {
-
-        "SetToContext"
-        {
-            "Context" "currentContext()"
-            "Key" "#toHeal"
-            "Value" "expr(%healthGain)"
-            "Type" "FIELD_FLOAT"
-        }
 
         "Hit"
         {
@@ -54,39 +58,62 @@
 
             "InitActions"
             {
-                "Conditional"
+                "AddDamage"
                 {
-                    
-                    "Condition" "isOnState(%HITTARGET, #WEAKENED)"
+                    "Type"          "DAMAGE_TRUE"
+                    "Damage"        "expr(%damage)"
+                }
+            }
 
-                    "Actions" 
+            "Actions"
+            {
+                "Heal"
+                {
+                    "Target"        "%SOURCE"
+                    "HealAmount"    "expr(%healthGain)"
+                }
+
+                "AttachEffect"
+                {
+                    "EffectName"    "HealingFXMega"
+                    "Target"        "%SOURCE"
+                }
+
+                "#Conditional"
+                {
+                    "Condition"     "isOnState(%TARGET, #DEAD)"
+
+                    "Actions"
                     {
-                        "Heal"
-                        {
-                            "Target"          "%HITSOURCE"
-                            "HealAmount"        "%toHeal"
-                        }
-
-                        "AttachEffect"
-                        {
-                            "EffectName"          "HealingFXMega"
-                            "Target"        "%HITSOURCE"
-                        }
-
                         "MarkHitLegendary"
                         {
                         }
-                    }
 
-                    "ElseActions"
-                    {
-                        "AddDamage"
+                        "ApplyModifier"
                         {
-                            "Type"          "DAMAGE_MAGICAL"
-                            "Damage"        "expr(%damage)"
+                            "ModifierName"    "darkknight_soulstrike_extra_damage"
+                            "Target"          "%CASTER"
+                            "Duration"        "%duration"
                         }
                     }
                 }
+            }
+        }
+
+    }
+
+    "Modifiers"
+    {
+        "darkknight_soulstrike_extra_damage"
+        {
+            "EffectName"    "BarbarianBerserkStatusFXMega"
+
+            "Icon"          "Enraged01"
+            "IconPriority"  "50"
+
+            "PropertiesAdd"
+            {
+                "extraDamage"       "%extraDamage"
             }
         }
     }
@@ -111,5 +138,4 @@
             }
         }
     }
-
 }

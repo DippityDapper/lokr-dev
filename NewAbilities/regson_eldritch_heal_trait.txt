@@ -28,7 +28,7 @@
             {
                 "Conditional"
                 {
-                    "Condition" "matchesGroup(unitGroup(%DEAD), @UnitGroup(BadSide)) && not(isOnState(%DEAD, #NO_SKULL)) && not(isOnState(%DEAD, #IS_CINEMATIC)) && (hexDistance(unitHex(%DEAD), unitHex(%TARGET)) <= 3)"
+                    "Condition" "matchesGroup(unitGroup(%DEAD), @UnitGroup(BadSide)) && not(isOnState(%DEAD, #NO_SKULL)) && not(isOnState(%DEAD, #IS_CINEMATIC)) && ((hexDistance(unitHex(%DEAD), unitHex(%TARGET)) <= 3) || equal(%INSTIGATOR, %TARGET))"
 
                     "Actions"
                     {

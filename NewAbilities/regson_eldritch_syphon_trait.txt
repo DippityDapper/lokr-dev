@@ -13,8 +13,13 @@
         }
         "02"
         {
+            "var_type"               "FIELD_INTEGER"
+            "level"                  "stat(%CASTER, #level)"
+        }
+        "03"
+        {
             "var_type"               "FIELD_EXPRESSION"
-            "reduction"               "-1*stat(%CASTER, #level)"
+            "reduction"              "-1*%level"
         }
     }
 
@@ -43,7 +48,7 @@
                         "AddDamage"
                         {
                             "Type"            "DAMAGE_MAGICAL"
-                            "Damage"          "%reduction"
+                            "Damage"          "expr(%reduction)"
                         }
 
                         "GiveArmor"

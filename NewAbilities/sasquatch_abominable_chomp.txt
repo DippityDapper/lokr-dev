@@ -83,25 +83,6 @@
                     "EffectName"    "HealingFXMega"
                     "Target"        "%SOURCE"
                 }
-
-                "#Conditional"
-                {
-                    "Condition"     "isOnState(%TARGET, #DEAD)"
-
-                    "Actions"
-                    {
-                        "MarkHitLegendary"
-                        {
-                        }
-
-                        "OffsetCooldown"
-                        {
-                            "Target"                "%TARGET"
-                            "ConcreteAbility"       "%ABILITY"
-                            "Offset"                "-999"
-                        }
-                    }
-                }
             }
         }
     }
